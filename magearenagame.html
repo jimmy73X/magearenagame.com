@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mage Arena - A voice-controlled PvP dark fantasy wizard battle game. Cast spells with your voice in this multiplayer Steam game.">
+    <meta name="keywords" content="Mage Arena, mage arena game, Steam game, PvP action, voice-controlled spells, dark fantasy, wizard arena, early access game, multiplayer combat, crafting mage arena, new wizard game, mage arena steam, mage arena spells, mage arena fireball, mage arena wiki, wizard spell game">
+    <link rel="canonical" href="https://magearenagame.com">
+    
+    <title>Mage Arena - Voice-Controlled Wizard Battle Game on Steam</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'apple-blue': '#0071e3',
+                        'apple-gray': '#f5f5f7',
+                        'apple-dark': '#1d1d1f',
+                        'wizard-purple': '#6a0dad',
+                        'spell-red': '#ff3b30',
+                        'mana-blue': '#0a84ff',
+                        'dark-fantasy': '#2c1a1d',
+                    },
+                    fontFamily: {
+                        'heading': ['MedievalSharp', 'cursive'],
+                        'body': ['Montserrat', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background: linear-gradient(135deg, #1d1d1f 0%, #2c1a1d 100%);
+            color: #f5f5f7;
+            min-height: 100vh;
+        }
+        
+        .spell-card {
+            background: rgba(30, 30, 32, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .spell-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(106, 13, 173, 0.3);
+        }
+        
+        .glowing-btn {
+            background: linear-gradient(45deg, #6a0dad, #0a84ff);
+            box-shadow: 0 4px 20px rgba(106, 13, 173, 0.6);
+            transition: all 0.3s ease;
+        }
+        
+        .glowing-btn:hover {
+            box-shadow: 0 6px 25px rgba(106, 13, 173, 0.8), 0 0 15px rgba(10, 132, 255, 0.6);
+            transform: translateY(-2px);
+        }
+        
+        .feature-icon {
+            background: linear-gradient(135deg, #6a0dad 0%, #0a84ff 100%);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #6a0dad, #0a84ff, transparent);
+            margin: 60px 0;
+        }
+        
+        .system-card {
+            background: rgba(25, 25, 28, 0.7);
+            border-left: 4px solid #0a84ff;
+        }
+        
+        .faq-card {
+            background: rgba(30, 30, 35, 0.7);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-card:hover {
+            background: rgba(40, 40, 45, 0.8);
+        }
+        
+        .logo-text {
+            font-family: 'MedievalSharp', cursive;
+            text-shadow: 0 0 10px rgba(106, 13, 173, 0.7), 0 0 20px rgba(10, 132, 255, 0.5);
+        }
+        
+        .game-image {
+            border-radius: 16px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+            transition: all 0.4s ease;
+        }
+        
+        .game-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 40px rgba(106, 13, 173, 0.4);
+        }
+    </style>
+</head>
+<body class="font-body">
+    <!-- Header -->
+    <header class="py-6 px-4 sm:px-8">
+        <div class="container mx-auto flex flex-col sm:flex-row justify-between items-center">
+            <div class="flex items-center mb-4 sm:mb-0">
+                <i class="fas fa-hat-wizard text-3xl text-purple-500 mr-3"></i>
+                <h1 class="logo-text text-3xl font-bold text-white">MAGE ARENA</h1>
+            </div>
+            <div>
+                <a href="https://store.steampowered.com/app/3716600/Mage_Arena/" 
+                   target="_blank"
+                   class="glowing-btn px-6 py-3 rounded-full font-semibold text-white">
+                   <i class="fab fa-steam mr-2"></i>PLAY ON STEAM
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-16 px-4 sm:px-8">
+        <div class="container mx-auto max-w-6xl text-center">
+            <div class="mb-10">
+                <span class="bg-purple-900 text-purple-300 px-4 py-1 rounded-full text-sm font-medium">NOW IN EARLY ACCESS</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-heading font-bold mb-6">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">VOICE-CONTROLLED</span><br>
+                WIZARD BATTLE ARENA
+            </h1>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-10">
+                A co-op PvP experience about using your voice to cast spells in the Mage Arena to settle an ages-old feud between sorcerers and warlocks.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-16">
+                <a href="https://store.steampowered.com/app/3716600/Mage_Arena/" 
+                   target="_blank"
+                   class="glowing-btn px-8 py-4 rounded-full font-bold text-white text-lg">
+                   GET ON STEAM - $2.99
+                </a>
+                <a href="#gameplay" class="px-8 py-4 rounded-full font-bold bg-white bg-opacity-10 text-white text-lg hover:bg-opacity-20 transition">
+                    LEARN MORE
+                </a>
+            </div>
+            
+            <div class="relative w-full max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl game-image">
+                <img src="https://onlinegamedayday.com/m5.png" alt="Voice-Controlled Wizard Battle Arena" class="w-full h-auto">
+            </div>
+        </div>
+    </section>
+
+    <!-- Price Section -->
+    <section class="py-16 px-4 sm:px-8 bg-gradient-to-b from-gray-900 to-dark-fantasy">
+        <div class="container mx-auto max-w-4xl">
+            <div class="flex flex-col md:flex-row items-center gap-8 mb-10">
+                <div class="md:w-1/2">
+                    <img src="https://onlinegamedayday.com/m1.png" alt="Mage Arena Price" class="w-full h-auto rounded-xl shadow-xl game-image">
+                </div>
+                <div class="md:w-1/2">
+                    <div class="spell-card p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="feature-icon">
+                                <i class="fas fa-tag text-white text-2xl"></i>
+                            </div>
+                            <h2 class="text-3xl font-bold font-heading ml-4">MAGE ARENA PRICE</h2>
+                        </div>
+                        
+                        <div class="space-y-4 text-gray-300">
+                            <p class="text-lg">
+                                Mage Arena is <span class="font-bold text-red-400">not a free game</span> and is currently priced at <span class="font-bold text-green-400">$2.99</span> on Steam on account for the bug fixes and the game's <span class="font-bold text-yellow-400">Early Access</span> state.
+                            </p>
+                            
+                            <p class="text-lg">
+                                This has been mentioned by the game's developer, <span class="font-bold">jrsjams</span>, on the game's official <span class="font-bold text-blue-400">Steam</span> page.
+                            </p>
+                            
+                            <p class="text-lg font-medium bg-gray-800 p-4 rounded-lg border-l-4 border-yellow-500">
+                                The price is still $2.99 as of August 2025 and potentially may stay the same until the game is on final release and more features have been added by the developer.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section class="py-16 px-4 sm:px-8">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl font-bold font-heading text-center mb-16">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">MAGE ARENA</span> IN ACTION
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/bZQGhvfLvvU" 
+                            title="The Funny Wizard Game" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                </div>
+                
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/roVGgzyBdc4" 
+                            title="MAGE ARENA is an incredible game" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                </div>
+                
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/8PDgUbvhAHo" 
+                            title="The Mage Arena Crafting Guide" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                </div>
+                
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/96oYVoqD6-4" 
+                            title="The Mage Arena Spell Guide" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gameplay Section -->
+    <section id="gameplay" class="py-16 px-4 sm:px-8 bg-gradient-to-b from-dark-fantasy to-gray-900">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl font-bold font-heading text-center mb-4">
+                HOW TO PLAY <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">MAGE ARENA</span>
+            </h2>
+            <p class="text-center text-gray-400 mb-16 max-w-2xl mx-auto">Master the arcane arts with your voice and dominate the arena</p>
+            
+            <!-- Gameplay Images -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                <div class="game-image overflow-hidden">
+                    <img src="https://onlinegamedayday.com/m2.png" alt="How to Play Mage Arena" class="w-full h-auto">
+                </div>
+                <div class="game-image overflow-hidden">
+                    <img src="https://onlinegamedayday.com/magearena-m3.png" alt="Mage Arena Gameplay" class="w-full h-auto">
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Core Mechanics -->
+                <div class="spell-card p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="feature-icon">
+                            <i class="fas fa-microphone-alt text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold ml-4">Core Mechanics & Controls</h3>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-xl font-semibold text-purple-400 mb-2">Voice-Activated Spellcasting</h4>
+                            <p class="text-gray-300">
+                                Cast spells by shouting English commands into your microphone (e.g., "Fireball," "Freeze," "Wormhole"). Accuracy matters: mispronunciations or background noise may cause misfires or self-damage.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-xl font-semibold text-blue-400 mb-2">Reset Spell Cooldowns</h4>
+                            <p class="text-gray-300">
+                                Drop your spellbook (hold G) and pick it up immediately to bypass cooldowns—a useful trick in emergencies.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-xl font-semibold text-green-400 mb-2">Movement & Interaction</h4>
+                            <ul class="list-disc list-inside text-gray-300 space-y-2">
+                                <li>Navigate using standard WASD keys</li>
+                                <li>Use Q to open the map, showing teammate positions, biomes, and objectives</li>
+                                <li>Target enemies with D; hold D to cancel targeting</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Game Modes -->
+                <div class="spell-card p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="feature-icon">
+                            <i class="fas fa-flag text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold ml-4">Game Modes & Objectives</h3>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-xl font-semibold text-red-400 mb-2">Capture the Flag (4v4)</h4>
+                            <ul class="list-disc list-inside text-gray-300 space-y-2">
+                                <li>Capture Your Base Flag First: Rushing out without securing your flag is a common mistake</li>
+                                <li>Respawn Rules: Eliminated players respawn until their flag is stolen by enemies</li>
+                                <li>Biome Exploration: Maps consist of randomized hexagonal biomes. Check the map (Q) to locate flags or loot-rich areas (e.g., lava fortress, cemetery mausoleum)</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-xl font-semibold text-yellow-400 mb-2">1v1 Duels</h4>
+                            <p class="text-gray-300">
+                                Fast-paced battles where vocal precision and timing decide victories. Misheard spells often lead to chaotic outcomes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Exploration -->
+                <div class="spell-card p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="feature-icon">
+                            <i class="fas fa-map-marked-alt text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold ml-4">Exploration & Crafting</h3>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-xl font-semibold text-green-400 mb-2">Biome-Specific Challenges & Loot</h4>
+                            <ul class="list-disc list-inside text-gray-300 space-y-2">
+                                <li>Loot Types: Chests contain spells, weapons (e.g., swords), or rare items like "Weed of the Pipe" (creates smoke rings)</li>
+                                <li>Unique Spells: Six spells (e.g., healing "Divine Light," high-damage "Thunderbolt") can only be found in chests or by trading with gnomes</li>
+                                <li>Environmental Hazards: Mushroom pits require bouncing on fungi to reach islands. Frog swamps slow movement with mud; giant frogs can eat players</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-xl font-semibold text-blue-400 mb-2">Crafting System</h4>
+                            <ul class="list-disc list-inside text-gray-300 space-y-2">
+                                <li>Collect resources (mushrooms, crystals) from biomes</li>
+                                <li>Craft tools (e.g., shrinking rays, frog spears) at "synthesis stumps"</li>
+                                <li>Goblin Deliveries: Green goblins periodically drop materials at your base. Kill them to steal their loot—they respawn!</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Combat Tips -->
+                <div class="spell-card p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="feature-icon">
+                            <i class="fas fa-fist-raised text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold ml-4">Combat Tips & Advanced Tactics</h3>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-xl font-semibold text-red-400 mb-2">Elemental Interactions</h4>
+                            <ul class="list-disc list-inside text-gray-300 space-y-2">
+                                <li>Extinguish fire (from lava or fireballs) by casting "Freeze" at your feet</li>
+                                <li>Use "Divine Light" (found in Mausoleum vases) for quick healing during exploration</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-xl font-semibold text-purple-400 mb-2">Teamplay Strategies</h4>
+                            <ul class="list-disc list-inside text-gray-300 space-y-2">
+                                <li>Friendly Fire: Enabled—avoid hitting allies!</li>
+                                <li>Night Mechanics: Darkness limits visibility; torches reveal your position to enemies</li>
+                                <li>Health Bars: Teammate health is visible below their names; red names denote enemies</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-xl font-semibold text-yellow-400 mb-2">Gnome Trading</h4>
+                            <p class="text-gray-300">
+                                Trading your spellbook to a gnome yields random items (usually materials), but you lose spells until respawn—not recommended!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spells Section -->
+    <section class="py-16 px-4 sm:px-8">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl font-bold font-heading text-center mb-4">
+                HOW TO GET <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">SPELLS</span>
+            </h2>
+            <p class="text-center text-gray-400 mb-16 max-w-2xl mx-auto">Acquire powerful magic to dominate the arena</p>
+            
+            <div class="flex justify-center mb-16">
+                <img src="https://onlinegamedayday.com/m4.png" alt="How to Get Spells" class="w-full max-w-4xl rounded-xl shadow-2xl game-image">
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Starter Spells -->
+                <div class="spell-card p-6">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-book text-4xl text-yellow-500 mb-3"></i>
+                        <h3 class="text-xl font-bold">Starter Spells</h3>
+                    </div>
+                    <p class="text-gray-300 text-center">
+                        Upon starting, you receive a spellbook with basic spells like Fireball, Freeze, and Wormhole.
+                    </p>
+                    <div class="mt-4 bg-gray-800 rounded-lg p-3">
+                        <p class="text-sm text-gray-400">
+                            <i class="fas fa-lightbulb text-yellow-500 mr-2"></i>Reset cooldowns by dropping (hold G) and picking up your spellbook
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Exploration -->
+                <div class="spell-card p-6">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-chess-rook text-4xl text-red-500 mb-3"></i>
+                        <h3 class="text-xl font-bold">Exploration & Loot</h3>
+                    </div>
+                    <p class="text-gray-300 text-center">
+                        Find chests in biomes (lava fortresses, cemetery mausoleums) containing torn spell pages.
+                    </p>
+                    <div class="mt-4 bg-gray-800 rounded-lg p-3">
+                        <p class="text-sm text-gray-400">
+                            <i class="fas fa-fire text-red-500 mr-2"></i>Unlock exclusive spells like Divine Light and Thunderbolt
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Trading -->
+                <div class="spell-card p-6">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-exchange-alt text-4xl text-green-500 mb-3"></i>
+                        <h3 class="text-xl font-bold">Trading with Gnomes</h3>
+                    </div>
+                    <p class="text-gray-300 text-center">
+                        Trade your spellbook for random items (usually materials, rarely spells).
+                    </p>
+                    <div class="mt-4 bg-red-900 bg-opacity-30 rounded-lg p-3 border border-red-700">
+                        <p class="text-sm text-red-300">
+                            <i class="fas fa-exclamation-triangle mr-2"></i>You lose all spells until respawn!
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Crafting -->
+                <div class="spell-card p-6">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-tools text-4xl text-blue-500 mb-3"></i>
+                        <h3 class="text-xl font-bold">Crafting & Special Items</h3>
+                    </div>
+                    <p class="text-gray-300 text-center">
+                        Craft tools at synthesis stumps using materials from goblin deliveries or biomes.
+                    </p>
+                    <div class="mt-4 bg-gray-800 rounded-lg p-3">
+                        <p class="text-sm text-gray-400">
+                            <i class="fas fa-magic text-blue-500 mr-2"></i>Spells like Weed of the Pipe are loot-exclusive
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Spell Methods Table -->
+            <div class="spell-card mt-12 p-6 overflow-x-auto">
+                <h3 class="text-2xl font-bold mb-6 text-center">Spell Acquisition Methods</h3>
+                <table class="w-full text-gray-300">
+                    <thead>
+                        <tr class="border-b border-gray-700">
+                            <th class="py-3 px-4 text-left">Method</th>
+                            <th class="py-3 px-4 text-left">Spell Examples</th>
+                            <th class="py-3 px-4 text-left">Risk/Difficulty</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800">
+                            <td class="py-3 px-4">Starter Spellbook</td>
+                            <td class="py-3 px-4">Fireball, Freeze</td>
+                            <td class="py-3 px-4"><span class="px-2 py-1 bg-green-800 rounded-full text-xs">Low</span></td>
+                        </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800">
+                            <td class="py-3 px-4">Biome Exploration</td>
+                            <td class="py-3 px-4">Divine Light, Thunderbolt</td>
+                            <td class="py-3 px-4"><span class="px-2 py-1 bg-yellow-800 rounded-full text-xs">Medium</span></td>
+                        </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800">
+                            <td class="py-3 px-4">Gnome Trading</td>
+                            <td class="py-3 px-4">Random spells</td>
+                            <td class="py-3 px-4"><span class="px-2 py-1 bg-red-800 rounded-full text-xs">High</span></td>
+                        </tr>
+                        <tr class="hover:bg-gray-800">
+                            <td class="py-3 px-4">Loot Containers</td>
+                            <td class="py-3 px-4">Weed of the Pipe</td>
+                            <td class="py-3 px-4"><span class="px-2 py-1 bg-yellow-800 rounded-full text-xs">Medium</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- System Requirements -->
+    <section class="py-16 px-4 sm:px-8 bg-gradient-to-b from-gray-900 to-dark-fantasy">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-4xl font-bold font-heading text-center mb-4">
+                SYSTEM <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">REQUIREMENTS</span>
+            </h2>
+            <p class="text-center text-gray-400 mb-16 max-w-2xl mx-auto">Ensure your system is ready for magical battles</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Minimum -->
+                <div class="system-card p-8">
+                    <h3 class="text-2xl font-bold text-red-400 mb-6">Minimum Requirements</h3>
+                    <ul class="space-y-4 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-desktop text-gray-500 mt-1 mr-3"></i>
+                            <span><strong>OS:</strong> Windows 10 64-bit</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-microchip text-gray-500 mt-1 mr-3"></i>
+                            <span><strong>Processor:</strong> Intel Core i5-2400 / AMD FX-6300</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-memory text-gray-500 mt-1 mr-3"></i>
+                            <span><strong>Memory:</strong> 8 GB RAM</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-video text-gray-500 mt-1 mr-3"></i>
+                            <span><strong>Graphics:</strong> NVIDIA GTX 960 / AMD R9 280</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-plug text-gray-500 mt-1 mr-3"></i>
+                            <span><strong>DirectX:</strong> Version 11</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-network-wired text-gray-500 mt-1 mr-3"></i>
+                            <span><strong>Network:</strong> Broadband Internet connection</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-hdd text-gray-500 mt-1 mr-3"></i>
+                            <span><strong>Storage:</strong> 4 GB available space</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-microphone text-red-500 mt-1 mr-3"></i>
+                            <span><strong>Additional:</strong> Microphone Required!</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Recommended -->
+                <div class="system-card p-8 border-l-blue-500">
+                    <h3 class="text-2xl font-bold text-blue-400 mb-6">Recommended Requirements</h3>
+                    <ul class="space-y-4 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-desktop text-gray-500 mt-1 mr-3"></i>
+                            <span><strong>OS:</strong> Windows 11 64-bit</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-microchip text-gray-500 mt-1 mr-3"></i>
+                            <span><strong>Processor:</strong> Intel Core i5-8400 / AMD Ryzen 5 2600</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-memory text-gray-500 mt-1 mr-3"></i>
+                            <span><strong>Memory:</strong> 16 GB RAM</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-video text-gray-500 mt-1 mr-3"></i>
+                            <span><strong>Graphics:</strong> NVIDIA GTX 1060 / AMD RX 580</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-plug text-gray-500 mt-1 mr-3"></i>
+                            <span><strong>DirectX:</strong> Version 12</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-network-wired text-gray-500 mt-1 mr-3"></i>
+                            <span><strong>Network:</strong> Broadband Internet connection</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-hdd text-gray-500 mt-1 mr-3"></i>
+                            <span><strong>Storage:</strong> 4 GB available space</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-microphone-alt text-blue-500 mt-1 mr-3"></i>
+                            <span><strong>Additional:</strong> High-quality Microphone</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 px-4 sm:px-8">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-4xl font-bold font-heading text-center mb-4">
+                FREQUENTLY <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">ASKED QUESTIONS</span>
+            </h2>
+            <p class="text-center text-gray-400 mb-16 max-w-2xl mx-auto">Everything you need to know about Mage Arena</p>
+            
+            <div class="space-y-6">
+                <!-- FAQ 1 -->
+                <div class="faq-card p-6">
+                    <h3 class="text-xl font-bold mb-3 flex items-center">
+                        <i class="fas fa-question-circle text-purple-500 mr-3"></i>
+                        Is Mage Arena Steam worth $2.99?
+                    </h3>
+                    <p class="text-gray-300">
+                        Absolutely! Mage Arena Steam offers hours of entertainment. Players love how Mage Arena Steam brings unique voice-controlled gameplay that creates unforgettable moments with friends.
+                    </p>
+                </div>
+                
+                <!-- FAQ 2 -->
+                <div class="faq-card p-6">
+                    <h3 class="text-xl font-bold mb-3 flex items-center">
+                        <i class="fas fa-question-circle text-blue-500 mr-3"></i>
+                        Does it work on Steam Deck?
+                    </h3>
+                    <p class="text-gray-300">
+                        Yes, but with limitations. You'll need Proton GE-10-8 and must use touchscreen for spell casting since controller support isn't implemented yet.
+                    </p>
+                </div>
+                
+                <!-- FAQ 3 -->
+                <div class="faq-card p-6">
+                    <h3 class="text-xl font-bold mb-3 flex items-center">
+                        <i class="fas fa-question-circle text-yellow-500 mr-3"></i>
+                        Why is it so cheap?
+                    </h3>
+                    <p class="text-gray-300">
+                        The developer reduced the price during Early Access due to ongoing bug fixes. Once stable, it will return to the regular $4.99 price.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 px-4 sm:px-8 bg-gradient-to-r from-purple-900 to-blue-900">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="text-4xl md:text-5xl font-bold font-heading mb-6">
+                READY TO BECOME A <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-red-500">POWERFUL WIZARD</span>?
+            </h2>
+            <p class="text-xl text-gray-200 max-w-2xl mx-auto mb-10">
+                Join thousands of players in the ultimate voice-controlled wizard battle arena. Available now on Steam Early Access.
+            </p>
+            <a href="https://store.steampowered.com/app/3716600/Mage_Arena/" 
+               target="_blank"
+               class="inline-block glowing-btn px-8 py-4 rounded-full font-bold text-white text-lg mb-4">
+               GET MAGE ARENA - $2.99
+            </a>
+            <p class="text-gray-300 text-sm mt-4">
+                <i class="fas fa-exclamation-circle mr-2"></i>Price may increase after Early Access period
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-4 sm:px-8 border-t border-gray-800">
+        <div class="container mx-auto max-w-6xl">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center">
+                        <i class="fas fa-hat-wizard text-2xl text-purple-500 mr-3"></i>
+                        <h3 class="logo-text text-2xl font-bold text-white">MAGE ARENA</h3>
+                    </div>
+                    <p class="text-gray-500 mt-2">© 2025 Mage Arena Game. All rights reserved.</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-steam text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-youtube text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-discord text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-twitter text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-12 pt-8 border-t border-gray-800 text-center">
+                <p class="text-gray-500 text-sm">
+                    Mage Arena is a registered trademark. All other trademarks are the property of their respective owners.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
