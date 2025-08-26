@@ -676,7 +676,186 @@
             </div>
         </div>
     </section>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortress of the Wizard - Embedded Game</title>
+    <style>
+        .fortress-wizard-embed {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            font-family: Arial, sans-serif;
+            color: #333;
+            line-height: 1.4;
+        }
+        
+        .fortress-wizard-embed .game-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 75%; /* 4:3 aspect ratio */
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            background: #000;
+        }
+        
+        .fortress-wizard-embed iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .fortress-wizard-embed .controls {
+            margin-top: 15px;
+            text-align: center;
+        }
+        
+        .fortress-wizard-embed .fullscreen-btn {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #4a4ae6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        
+        .fortress-wizard-embed .fullscreen-btn:hover {
+            background: #3a3ad6;
+        }
+        
+        .fortress-wizard-embed .game-info {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f5f5f5;
+            border-radius: 8px;
+        }
+        
+        .fortress-wizard-embed h2 {
+            font-size: 18px;
+            margin: 0 0 12px 0;
+            color: #4a4ae6;
+        }
+        
+        .fortress-wizard-embed h3 {
+            font-size: 16px;
+            margin: 18px 0 10px 0;
+            color: #4a4ae6;
+        }
+        
+        .fortress-wizard-embed p {
+            margin: 0 0 12px 0;
+            font-size: 14px;
+        }
+        
+        .fortress-wizard-embed ul {
+            padding-left: 20px;
+            margin: 0 0 15px 0;
+        }
+        
+        .fortress-wizard-embed li {
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+        
+        .fortress-wizard-embed .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .fortress-wizard-embed .feature {
+            background: #e9e9ff;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+        
+        .fortress-wizard-embed .controls-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .fortress-wizard-embed .control {
+            background: #f0f0f0;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+        
+        .fortress-wizard-embed .update-info {
+            background: #e9e9ff;
+            padding: 10px 15px;
+            border-radius: 4px;
+            margin-top: 15px;
+            text-align: center;
+            font-size: 13px;
+        }
+        
+        @media (max-width: 600px) {
+            .fortress-wizard-embed .features-grid,
+            .fortress-wizard-embed .controls-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="fortress-wizard-embed">
+        <div class="game-container">
+            <iframe src="https://games.crazygames.com/en_US/fortress-of-the-wizard-mfx/index.html" allow="fullscreen" allowfullscreen></iframe>
+        </div>
+        
+        <div class="controls">
+            <button class="fullscreen-btn" onclick="openFullscreen()">Play Fullscreen</button>
+        </div>
+        
+        <div class="game-info">
+            <h2>About Fortress of the Wizard</h2>
+            <p>Fortress of the Wizard is a magical defense adventure where you become a mighty sorcerer guarding your stronghold from relentless demon hordes. Harness an arsenal of devastating spells—fireballs, icy waves, swirling tornadoes, meteors, and more—to crush the invasion.</p>
+            
+            <h3>Game Features</h3>
+            <div class="features-grid">
+                <div class="feature">8 Unique Spells</div>
+                <div class="feature">8 Different Enemies</div>
+                <div class="feature">20 Types of Upgrades</div>
+                <div class="feature">Multiple Locations</div>
+            </div>
+            
+            <h3>Game Controls</h3>
+            <div class="controls-grid">
+                <div class="control"><strong>Left Mouse Button</strong> - Use selected spell</div>
+                <div class="control"><strong>QE / 1-8 Keys / Mouse Wheel</strong> - Select spells</div>
+                <div class="control"><strong>Right Mouse Button / W Key</strong> - Select fireball spell</div>
+            </div>
+            
+            <div class="update-info">
+                <strong>Last Updated:</strong> Today
+            </div>
+        </div>
+    </div>
 
+    <script>
+        function openFullscreen() {
+            const iframe = document.querySelector('.fortress-wizard-embed iframe');
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.webkitRequestFullscreen) {
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) {
+                iframe.msRequestFullscreen();
+            }
+        }
+    </script>
     <!-- CTA Section -->
     <section class="py-20 px-4 sm:px-8 bg-gradient-to-r from-purple-900 to-blue-900">
         <div class="container mx-auto max-w-4xl text-center">
