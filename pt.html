@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9341704667724928"
+     crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-9341704667724928">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X549WE5Q7S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-X549WE5Q7S');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mage Arena - Um jogo de batalha de magos PvP de fantasia sombria controlado por voz. Lance feitiços com sua voz neste jogo multiplayer da Steam.">
+    <meta name="keywords" content="Mage Arena, jogo mage arena, jogo Steam, ação PvP, feitiços controlados por voz, fantasia sombria, arena de magos, jogo em acesso antecipado, combate multiplayer, crafting mage arena, novo jogo de mago, mage arena steam, feitiços mage arena, mage arena fireball, wiki mage arena, jogo de feitiços de mago">
+    <link rel="canonical" href="https://magearenagame.com">
+    
+    <title>Mage Arena - Jogo de Batalha de Magos Controlado por Voz na Steam</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'apple-blue': '#0071e3',
+                        'apple-gray': '#f5f5f7',
+                        'apple-dark': '#1d1d1f',
+                        'wizard-purple': '#6a0dad',
+                        'spell-red': '#ff3b30',
+                        'mana-blue': '#0a84ff',
+                        'dark-fantasy': '#2c1a1d',
+                    },
+                    fontFamily: {
+                        'heading': ['MedievalSharp', 'cursive'],
+                        'body': ['Montserrat', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background: linear-gradient(135deg, #1d1d1f 0%, #2c1a1d 100%);
+            color: #f5f5f7;
+            min-height: 100vh;
+        }
+        
+        .spell-card {
+            background: rgba(30, 30, 32, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .spell-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(106, 13, 173, 0.3);
+        }
+        
+        .glowing-btn {
+            background: linear-gradient(45deg, #6a0dad, #0a84ff);
+            box-shadow: 0 4px 20px rgba(106, 13, 173, 0.6);
+            transition: all 0.3s ease;
+        }
+        
+        .glowing-btn:hover {
+            box-shadow: 0 6px 25px rgba(106, 13, 173, 0.8), 0 0 15px rgba(10, 132, 255, 0.6);
+            transform: translateY(-2px);
+        }
+        
+        .feature-icon {
+            background: linear-gradient(135deg, #6a0dad 0%, #0a84ff 100%);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #6a0dad, #0a84ff, transparent);
+            margin: 60px 0;
+        }
+        
+        .system-card {
+            background: rgba(25, 25, 28, 0.7);
+            border-left: 4px solid #0a84ff;
+        }
+        
+        .faq-card {
+            background: rgba(30, 30, 35, 0.7);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-card:hover {
+            background: rgba(40, 40, 45, 0.8);
+        }
+        
+        .logo-text {
+            font-family: 'MedievalSharp', cursive;
+            text-shadow: 0 0 10px rgba(106, 13, 173, 0.7), 0 0 20px rgba(10, 132, 255, 0.5);
+        }
+        
+        .game-image {
+            border-radius: 16px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+            transition: all 0.4s ease;
+        }
+        
+        .game-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 40px rgba(106, 13, 173, 0.4);
+        }
+    </style>
+</head>
+<body class="font-body">
+    <!-- Header -->
+    <header class="py-6 px-4 sm:px-8">
+        <div class="container mx-auto flex flex-col sm:flex-row justify-between items-center">
+            <div class="flex items-center mb-4 sm:mb-0">
+                <i class="fas fa-hat-wizard text-3xl text-purple-500 mr-3"></i>
+                <h1 class="logo-text text-3xl font-bold text-white">MAGE ARENA</h1>
+            </div>
+            <div>
+                <a href="https://store.steampowered.com/app/3716600/Mage_Arena/" 
+                   target="_blank"
+                   class="glowing-btn px-6 py-3 rounded-full font-semibold text-white">
+                   <i class="fab fa-steam mr-2"></i>JOGAR NA STEAM
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-16 px-4 sm:px-8">
+        <div class="container mx-auto max-w-6xl text-center">
+            <div class="mb-10">
+                <span class="bg-purple-900 text-purple-300 px-4 py-1 rounded-full text-sm font-medium">AGORA EM ACESSO ANTECIPADO</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-heading font-bold mb-6">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">CONTROLADO POR VOZ</span><br>
+                ARENA DE BATALHA DE MAGOS
+            </h1>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-10">
+                Uma experiência cooperativa PvP sobre usar sua voz para lançar feitiços na Arena de Magos para resolver uma rixa antiga entre feiticeiros e bruxos.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-16">
+                <a href="https://store.steampowered.com/app/3716600/Mage_Arena/" 
+                   target="_blank"
+                   class="glowing-btn px-8 py-4 rounded-full font-bold text-white text-lg">
+                   OBTER NA STEAM - $2.99
+                </a>
+                <a href="#gameplay" class="px-8 py-4 rounded-full font-bold bg-white bg-opacity-10 text-white text-lg hover:bg-opacity-20 transition">
+                    SAIBA MAIS
+                </a>
+            </div>
+            
+            <div class="relative w-full max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl game-image">
+                <img src="https://onlinegamedayday.com/m5.png" alt="Arena de Batalha de Magos Controlada por Voz" class="w-full h-auto">
+            </div>
+        </div>
+    </section>
+
+    <!-- Price Section -->
+    <section class="py-16 px-4 sm:px-8 bg-gradient-to-b from-gray-900 to-dark-fantasy">
+        <div class="container mx-auto max-w-4xl">
+            <div class="flex flex-col md:flex-row items-center gap-8 mb-10">
+                <div class="md:w-1/2">
+                    <img src="https://onlinegamedayday.com/m1.png" alt="Preço do Mage Arena" class="w-full h-auto rounded-xl shadow-xl game-image">
+                </div>
+                <div class="md:w-1/2">
+                    <div class="spell-card p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="feature-icon">
+                                <i class="fas fa-tag text-white text-2xl"></i>
+                            </div>
+                            <h2 class="text-3xl font-bold font-heading ml-4">PREÇO DO MAGE ARENA</h2>
+                        </div>
+                        
+                        <div class="space-y-4 text-gray-300">
+                            <p class="text-lg">
+                                Mage Arena <span class="font-bold text-red-400">não é um jogo gratuito</span> e está atualmente precificado em <span class="font-bold text-green-400">$2.99</span> na Steam devido às correções de bugs e ao estado de <span class="font-bold text-yellow-400">Acesso Antecipado</span> do jogo.
+                            </p>
+                            
+                            <p class="text-lg">
+                                Isso foi mencionado pelo desenvolvedor do jogo, <span class="font-bold">jrsjams</span>, na página oficial do jogo na <span class="font-bold text-blue-400">Steam</span>.
+                            </p>
+                            
+                            <p class="text-lg font-medium bg-gray-800 p-4 rounded-lg border-l-4 border-yellow-500">
+                                O preço ainda é $2.99 em agosto de 2025 e potencialmente pode permanecer o mesmo até o lançamento final do jogo e mais recursos terem sido adicionados pelo desenvolvedor.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section class="py-16 px-4 sm:px-8">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl font-bold font-heading text-center mb-16">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">MAGE ARENA</span> EM AÇÃO
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/bZQGhvfLvvU" 
+                            title="The Funny Wizard Game" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                </div>
+                
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/roVGgzyBdc4" 
+                            title="MAGE ARENA is an incredible game" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                </div>
+                
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/8PDgUbvhAHo" 
+                            title="The Mage Arena Crafting Guide" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                </div>
+                
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/96oYVoqD6-4" 
+                            title="The Mage Arena Spell Guide" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gameplay Section -->
+    <section id="gameplay" class="py-16 px-4 sm:px-8 bg-gradient-to-b from-dark-fantasy to-gray-900">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl font-bold font-heading text-center mb-4">
+                COMO JOGAR <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">MAGE ARENA</span>
+            </h2>
+            <p class="text-center text-gray-400 mb-16 max-w-2xl mx-auto">Domine as artes arcanas com sua voz e domine a arena</p>
+            
+            <!-- Gameplay Images -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                <div class="game-image overflow-hidden">
+                    <img src="https://onlinegamedayday.com/m2.png" alt="Como Jogar Mage Arena" class="w-full h-auto">
+                </div>
+                <div class="game-image overflow-hidden">
+                    <img src="https://onlinegamedayday.com/magearena-m3.png" alt="Jogabilidade do Mage Arena" class="w-full h-auto">
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Core Mechanics -->
+                <div class="spell-card p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="feature-icon">
+                            <i class="fas fa-microphone-alt text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold ml-4">Mecânicas Principais & Controles</h3>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-xl font-semibold text-purple-400 mb-2">Conjuração por Voz</h4>
+                            <p class="text-gray-300">
+                                Lance feitiços gritando comandos em inglês no seu microfone (ex: "Fireball", "Freeze", "Wormhole"). A precisão importa: pronúncias erradas ou ruído de fundo podem causar falhas ou dano a si mesmo.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-xl font-semibold text-blue-400 mb-2">Redefinir Tempos de Recarga</h4>
+                            <p class="text-gray-300">
+                                Solte seu grimório (segure G) e pegue-o imediatamente para ignorar tempos de recarga — um truque útil em emergências.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-xl font-semibold text-green-400 mb-2">Movimento & Interação</h4>
+                            <ul class="list-disc list-inside text-gray-300 space-y-2">
+                                <li>Navegue usando as teclas WASD padrão</li>
+                                <li>Use Q para abrir o mapa, mostrando posições de companheiros, biomas e objetivos</li>
+                                <li>Mire em inimigos com D; segure D para cancelar mira</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Game Modes -->
+                <div class="spell-card p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="feature-icon">
+                            <i class="fas fa-flag text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold ml-4">Modos de Jogo & Objetivos</h3>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-xl font-semibold text-red-400 mb-2">Capture a Bandeira (4v4)</h4>
+                            <ul class="list-disc list-inside text-gray-300 space-y-2">
+                                <li>Capture Primeiro a Bandeira da Sua Base: Sair correndo sem proteger sua bandeira é um erro comum</li>
+                                <li>Regras de Renascimento: Jogadores eliminados renascem até que sua bandeira seja roubada por inimigos</li>
+                                <li>Exploração de Biomas: Os mapas consistem em biomas hexagonais randomizados. Verifique o mapa (Q) para localizar bandeiras ou áreas ricas em saque (ex: fortaleza de lava, mausoléu do cemitério)</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-xl font-semibold text-yellow-400 mb-2">Duelos 1v1</h4>
+                            <p class="text-gray-300">
+                                Batalhas rápidas onde precisão vocal e timing decidem as vitórias. Feitiços mal compreendidos frequentemente levam a resultados caóticos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Exploration -->
+                <div class="spell-card p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="feature-icon">
+                            <i class="fas fa-map-marked-alt text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold ml-4">Exploração & Criação</h3>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-xl font-semibold text-green-400 mb-2">Desafios e Saque Específicos do Bioma</h4>
+                            <ul class="list-disc list-inside text-gray-300 space-y-2">
+                                <li>Tipos de Saque: Baús contêm feitiços, armas (ex: espadas) ou itens raros como "Weed of the Pipe" (cria anéis de fumaça)</li>
+                                <li>Feitiços Únicos: Seis feitiços (ex: cura "Divine Light", alto dano "Thunderbolt") só podem ser encontrados em baús ou negociando com gnomos</li>
+                                <li>Perigos Ambientais: Poços de cogumelos exigem pular em fungos para alcançar ilhas. Pântanos de rã retardam o movimento com lama; rãs gigantes podem comer jogadores</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-xl font-semibold text-blue-400 mb-2">Sistema de Criação</h4>
+                            <ul class="list-disc list-inside text-gray-300 space-y-2">
+                                <li>Colete recursos (cogumelos, cristais) de biomas</li>
+                                <li>Crie ferramentas (ex: raios encolhedores, lanças de rã) em "tocos de síntese"</li>
+                                <li>Entregas de Goblin: Goblins verdes periodicamente deixam materiais em sua base. Mate-os para roubar seu saque — eles renascem!</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Combat Tips -->
+                <div class="spell-card p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="feature-icon">
+                            <i class="fas fa-fist-raised text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold ml-4">Dicas de Combate & Táticas Avançadas</h3>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-xl font-semibold text-red-400 mb-2">Interações Elementais</h4>
+                            <ul class="list-disc list-inside text-gray-300 space-y-2">
+                                <li>Extingua fogo (de lava ou fireballs) lançando "Freeze" aos seus pés</li>
+                                <li>Use "Divine Light" (encontrado em vasos do Mausoléu) para cura rápida durante a exploração</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-xl font-semibold text-purple-400 mb-2">Estratégias de Equipe</h4>
+                            <ul class="list-disc list-inside text-gray-300 space-y-2">
+                                <li>Fogo Amigo: Ativado — evite acertar aliados!</li>
+                                <li>Mecânicas Noturnas: A escuridão limita a visibilidade; tochas revelam sua posição para inimigos</li>
+                                <li>Barras de Vida: A vida dos companheiros é visível abaixo de seus nomes; nomes vermelhos denotam inimigos</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-xl font-semibold text-yellow-400 mb-2">Negociação com Gnomos</h4>
+                            <p class="text-gray-300">
+                                Negociar seu grimório com um gnomo produz itens aleatórios (normalmente materiais), mas você perde feitiços até renascer — não recomendado!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spells Section -->
+    <section class="py-16 px-4 sm:px-8">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl font-bold font-heading text-center mb-4">
+                COMO OBTER <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">FEITIÇOS</span>
+            </h2>
+            <p class="text-center text-gray-400 mb-16 max-w-2xl mx-auto">Adquira magia poderosa para dominar a arena</p>
+            
+            <div class="flex justify-center mb-16">
+                <img src="https://onlinegamedayday.com/m4.png" alt="Como Obter Feitiços" class="w-full max-w-4xl rounded-xl shadow-2xl game-image">
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Starter Spells -->
+                <div class="spell-card p-6">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-book text-4xl text-yellow-500 mb-3"></i>
+                        <h3 class="text-xl font-bold">Feitiços Iniciais</h3>
+                    </div>
+                    <p class="text-gray-300 text-center">
+                        Ao iniciar, você recebe um grimório com feitiços básicos como Fireball, Freeze e Wormhole.
+                    </p>
+                    <div class="mt-4 bg-gray-800 rounded-lg p-3">
+                        <p class="text-sm text-gray-400">
+                            <i class="fas fa-lightbulb text-yellow-500 mr-2"></i>Redefina os tempos de recarga soltando (segure G) e pegando seu grimório
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Exploration -->
+                <div class="spell-card p-6">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-chess-rook text-4xl text-red-500 mb-3"></i>
+                        <h3 class="text-xl font-bold">Exploração & Saque</h3>
+                    </div>
+                    <p class="text-gray-300 text-center">
+                        Encontre baús em biomas (fortalezas de lava, mausoléus de cemitério) contendo páginas de feitiços rasgadas.
+                    </p>
+                    <div class="mt-4 bg-gray-800 rounded-lg p-3">
+                        <p class="text-sm text-gray-400">
+                            <i class="fas fa-fire text-red-500 mr-2"></i>Desbloqueie feitiços exclusivos como Divine Light e Thunderbolt
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Trading -->
+                <div class="spell-card p-6">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-exchange-alt text-4xl text-green-500 mb-3"></i>
+                        <h3 class="text-xl font-bold">Negociação com Gnomos</h3>
+                    </div>
+                    <p class="text-gray-300 text-center">
+                        Negocie seu grimório por itens aleatórios (normalmente materiais, raramente feitiços).
+                    </p>
+                    <div class="mt-4 bg-red-900 bg-opacity-30 rounded-lg p-3 border border-red-700">
+                        <p class="text-sm text-red-300">
+                            <i class="fas fa-exclamation-triangle mr-2"></i>Você perde todos os feitiços até renascer!
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Crafting -->
+                <div class="spell-card p-6">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-tools text-4xl text-blue-500 mb-3"></i>
+                        <h3 class="text-xl font-bold">Criação & Itens Especiais</h3>
+                    </div>
+                    <p class="text-gray-300 text-center">
+                        Crie ferramentas em tocos de síntese usando materiais de entregas de goblin ou biomas.
+                    </p>
+                    <div class="mt-4 bg-gray-800 rounded-lg p-3">
+                        <p class="text-sm text-gray-400">
+                            <i class="fas fa-magic text-blue-500 mr-2"></i>Feitiços como Weed of the Pipe são exclusivos de saque
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Spell Methods Table -->
+            <div class="spell-card mt-12 p-6 overflow-x-auto">
+                <h3 class="text-2xl font-bold mb-6 text-center">Métodos de Aquisição de Feitiços</h3>
+                <table class="w-full text-gray-300">
+                    <thead>
+                        <tr class="border-b border-gray-700">
+                            <th class="py-3 px-4 text-left">Método</th>
+                            <th class="py-3 px-4 text-left">Exemplos de Feitiços</th>
+                            <th class="py-3 px-4 text-left">Risco/Dificuldade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800">
+                            <td class="py-3 px-4">Grimório Inicial</td>
+                            <td class="py-3 px-4">Fireball, Freeze</td>
+                            <td class="py-3 px-4"><span class="px-2 py-1 bg-green-800 rounded-full text-xs">Baixo</span></td>
+                        </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800">
+                            <td class="py-3 px-4">Exploração de Biomas</td>
+                            <td class="py-3 px-4">Divine Light, Thunderbolt</td>
+                            <td class="py-3 px-4"><span class="px-2 py-1 bg-yellow-800 rounded-full text-xs">Médio</span></td>
+                        </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800">
+                            <td class="py-3 px-4">Negociação com Gnomos</td>
+                            <td class="py-3 px-4">Feitiços aleatórios</td>
+                            <td class="py-3 px-4"><span class="px-2 py-1 bg-red-800 rounded-full text-xs">Alto</span></td>
+                        </tr>
+                        <tr class="hover:bg-gray-800">
+                            <td class="py-3 px-4">Contêineres de Saque</td>
+                            <td class="py-3 px-4">Weed of the Pipe</td>
+                            <td class="py-3 px-4"><span class="px-2 py-1 bg-yellow-800 rounded-full text-xs">Médio</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- System Requirements -->
+    <section class="py-16 px-4 sm:px-8 bg-gradient-to-b from-gray-900 to-dark-fantasy">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-4xl font-bold font-heading text-center mb-4">
+                REQUISITOS DO <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">SISTEMA</span>
+            </h2>
+            <p class="text-center text-gray-400 mb-16 max-w-2xl mx-auto">Garanta que seu sistema está pronto para batalhas mágicas</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Minimum -->
+                <div class="system-card p-8">
+                    <h3 class="text-2xl font-bold text-red-400 mb-6">Requisitos Mínimos</h3>
+                    <ul class="space-y-4 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-desktop text-gray-500 mt-1 mr-3"></i>
+                            <span><strong>SO:</strong> Windows 10 64-bit</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-microchip text-gray-500 mt-1 mr-3"></i>
+                            <span><strong>Processador:</strong> Intel Core i5-2400 / AMD FX-6300</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-memory text-gray-500 mt-1 mr-3"></i>
+                            <span><strong>Memória:</strong> 8 GB RAM</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-video text-gray-500 mt-1 mr-3"></i>
+                            <span><strong>Gráficos:</strong> NVIDIA GTX 960 / AMD R9 280</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-plug text-gray-500 mt-1 mr-3"></i>
+                            <span><strong>DirectX:</strong> Versão 11</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-network-wired text-gray-500 mt-1 mr-3"></i>
+                            <span><strong>Rede:</strong> Conexão de internet banda larga</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-hdd text-gray-500 mt-1 mr-3"></i>
+                            <span><strong>Armazenamento:</strong> 4 GB de espaço disponível</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-microphone text-red-500 mt-1 mr-3"></i>
+                            <span><strong>Adicional:</strong> Microfone Obrigatório!</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Recommended -->
+                <div class="system-card p-8 border-l-blue-500">
+                    <h3 class="text-2xl font-bold text-blue-400 mb-6">Requisitos Recomendados</h3>
+                    <ul class="space-y-4 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-desktop text-gray-500 mt-1 mr-3"></i>
+                            <span><strong>SO:</strong> Windows 11 64-bit</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-microchip text-gray-500 mt-1 mr-3"></i>
+                            <span><strong>Processador:</strong> Intel Core i5-8400 / AMD Ryzen 5 2600</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-memory text-gray-500 mt-1 mr-3"></i>
+                            <span><strong>Memória:</strong> 16 GB RAM</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-video text-gray-500 mt-1 mr-3"></i>
+                            <span><strong>Gráficos:</strong> NVIDIA GTX 1060 / AMD RX 580</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-plug text-gray-500 mt-1 mr-3"></i>
+                            <span><strong>DirectX:</strong> Versão 12</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-network-wired text-gray-500 mt-1 mr-3"></i>
+                            <span><strong>Rede:</strong> Conexão de internet banda larga</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-hdd text-gray-500 mt-1 mr-3"></i>
+                            <span><strong>Armazenamento:</strong> 4 GB de espaço disponível</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-microphone-alt text-blue-500 mt-1 mr-3"></i>
+                            <span><strong>Adicional:</strong> Microfone de Alta Qualidade</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 px-4 sm:px-8">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-4xl font-bold font-heading text-center mb-4">
+                PERGUNTAS <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">FREQUENTES</span>
+            </h2>
+            <p class="text-center text-gray-400 mb-16 max-w-2xl mx-auto">Tudo que você precisa saber sobre Mage Arena</p>
+            
+            <div class="space-y-6">
+                <!-- FAQ 1 -->
+                <div class="faq-card p-6">
+                    <h3 class="text-xl font-bold mb-3 flex items-center">
+                        <i class="fas fa-question-circle text-purple-500 mr-3"></i>
+                        Vale a pena comprar Mage Arena na Steam por $2.99?
+                    </h3>
+                    <p class="text-gray-300">
+                        Absolutamente! Mage Arena na Steam oferece horas de entretenimento. Os jogadores adoram como Mage Arena traz uma jogabilidade única controlada por voz que cria momentos inesquecíveis com amigos.
+                    </p>
+                </div>
+                
+                <!-- FAQ 2 -->
+                <div class="faq-card p-6">
+                    <h3 class="text-xl font-bold mb-3 flex items-center">
+                        <i class="fas fa-question-circle text-blue-500 mr-3"></i>
+                        Funciona no Steam Deck?
+                    </h3>
+                    <p class="text-gray-300">
+                        Sim, mas com limitações. Você precisará do Proton GE-10-8 e deve usar a tela touch para lançar feitiços, pois o suporte a controle ainda não foi implementado.
+                    </p>
+                </div>
+                
+                <!-- FAQ 3 -->
+                <div class="faq-card p-6">
+                    <h3 class="text-xl font-bold mb-3 flex items-center">
+                        <i class="fas fa-question-circle text-yellow-500 mr-3"></i>
+                        Por que é tão barato?
+                    </h3>
+                    <p class="text-gray-300">
+                        O desenvolvedor reduziu o preço durante o Acesso Antecipado devido às correções de bugs em andamento. Uma vez estável, voltará ao preço regular de $4.99.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortress of the Wizard - Jogo Embutido</title>
+    <style>
+        .fortress-wizard-embed {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            font-family: Arial, sans-serif;
+            color: #333;
+            line-height: 1.4;
+        }
+        
+        .fortress-wizard-embed .game-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 75%; /* 4:3 aspect ratio */
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            background: #000;
+        }
+        
+        .fortress-wizard-embed iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .fortress-wizard-embed .controls {
+            margin-top: 15px;
+            text-align: center;
+        }
+        
+        .fortress-wizard-embed .fullscreen-btn {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #4a4ae6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        
+        .fortress-wizard-embed .fullscreen-btn:hover {
+            background: #3a3ad6;
+        }
+        
+        .fortress-wizard-embed .game-info {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f5f5f5;
+            border-radius: 8px;
+        }
+        
+        .fortress-wizard-embed h2 {
+            font-size: 18px;
+            margin: 0 0 12px 0;
+            color: #4a4ae6;
+        }
+        
+        .fortress-wizard-embed h3 {
+            font-size: 16px;
+            margin: 18px 0 10px 0;
+            color: #4a4ae6;
+        }
+        
+        .fortress-wizard-embed p {
+            margin: 0 0 12px 0;
+            font-size: 14px;
+        }
+        
+        .fortress-wizard-embed ul {
+            padding-left: 20px;
+            margin: 0 0 15px 0;
+        }
+        
+        .fortress-wizard-embed li {
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+        
+        .fortress-wizard-embed .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .fortress-wizard-embed .feature {
+            background: #e9e9ff;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+        
+        .fortress-wizard-embed .controls-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .fortress-wizard-embed .control {
+            background: #f0f0f0;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+        
+        .fortress-wizard-embed .update-info {
+            background: #e9e9ff;
+            padding: 10px 15px;
+            border-radius: 4px;
+            margin-top: 15px;
+            text-align: center;
+            font-size: 13px;
+        }
+        
+        @media (max-width: 600px) {
+            .fortress-wizard-embed .features-grid,
+            .fortress-wizard-embed .controls-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="fortress-wizard-embed">
+        <div class="game-container">
+            <iframe src="https://games.crazygames.com/en_US/fortress-of-the-wizard-mfx/index.html" allow="fullscreen" allowfullscreen></iframe>
+        </div>
+        
+        <div class="controls">
+            <button class="fullscreen-btn" onclick="openFullscreen()">Jogar em Tela Cheia</button>
+        </div>
+        
+        <div class="game-info">
+            <h2>Sobre Fortress of the Wizard</h2>
+            <p>Fortress of the Wizard é uma aventura de defesa mágica onde você se torna um poderoso feiticeiro guardando sua fortaleza de hordas de demônios implacáveis. Use um arsenal de feitiços devastadores — fireballs, ondas geladas, tornados, meteoros e mais — para esmagar a invasão.</p>
+            
+            <h3>Características do Jogo</h3>
+            <div class="features-grid">
+                <div class="feature">8 Feitiços Únicos</div>
+                <div class="feature">8 Inimigos Diferentes</div>
+                <div class="feature">20 Tipos de Melhorias</div>
+                <div class="feature">Múltiplas Localizações</div>
+            </div>
+            
+            <h3>Controles do Jogo</h3>
+            <div class="controls-grid">
+                <div class="control"><strong>Botão Esquerdo do Mouse</strong> - Usar feitiço selecionado</div>
+                <div class="control"><strong>QE / Teclas 1-8 / Roda do Mouse</strong> - Selecionar feitiços</div>
+                <div class="control"><strong>Botão Direito do Mouse / Tecla W</strong> - Selecionar feitiço fireball</div>
+            </div>
+            
+            <div class="update-info">
+                <strong>Última Atualização:</strong> Hoje
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openFullscreen() {
+            const iframe = document.querySelector('.fortress-wizard-embed iframe');
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.webkitRequestFullscreen) {
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) {
+                iframe.msRequestFullscreen();
+            }
+        }
+    </script>
+    <!-- CTA Section -->
+    <section class="py-20 px-4 sm:px-8 bg-gradient-to-r from-purple-900 to-blue-900">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="text-4xl md:text-5xl font-bold font-heading mb-6">
+                PRONTO PARA SE TORNAR UM <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-red-500">PODEROSO MAGO</span>?
+            </h2>
+            <p class="text-xl text-gray-200 max-w-2xl mx-auto mb-10">
+                Junte-se a milhares de jogadores na ultimate arena de batalha de magos controlada por voz. Disponível agora no Acesso Antecipado da Steam.
+            </p>
+            <a href="https://store.steampowered.com/app/3716600/Mage_Arena/" 
+               target="_blank"
+               class="inline-block glowing-btn px-8 py-4 rounded-full font-bold text-white text-lg mb-4">
+               OBTER MAGE ARENA - $2.99
+            </a>
+            <p class="text-gray-300 text-sm mt-4">
+                <i class="fas fa-exclamation-circle mr-2"></i>O preço pode aumentar após o período de Acesso Antecipado
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-4 sm:px-8 border-t border-gray-800">
+        <div class="container mx-auto max-w-6xl">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center">
+                        <i class="fas fa-hat-wizard text-2xl text-purple-500 mr-3"></i>
+                        <h3 class="logo-text text-2xl font-bold text-white">MAGE ARENA</h3>
+                    </div>
+                    <p class="text-gray-500 mt-2">© 2025 Mage Arena Game. Todos os direitos reservados.</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="https://store.steampowered.com/" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-steam text-2xl"></i>
+                    </a>
+                    <a href="https://www.youtube.com/" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-youtube text-2xl"></i>
+                    </a>
+                    <a href="https://discord.com/" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-discord text-2xl"></i>
+                    </a>
+                    <a href="https://x.com/" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-twitter text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
