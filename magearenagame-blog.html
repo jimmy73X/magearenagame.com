@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>magearenagame - Free Blog Platform</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--primary-color);
+        }
+        
+        .create-post-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .create-post-btn:hover {
+            background-color: #2980b9;
+        }
+        
+        main {
+            padding: 2rem 0;
+        }
+        
+        .post-form-container {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--box-shadow);
+            margin-bottom: 2rem;
+            display: none;
+        }
+        
+        .post-form-container.active {
+            display: block;
+        }
+        
+        .post-form h2 {
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background-color: #2980b9;
+        }
+        
+        .cancel-btn {
+            background-color: #95a5a6;
+            margin-left: 10px;
+        }
+        
+        .cancel-btn:hover {
+            background-color: #7f8c8d;
+        }
+        
+        .posts-container {
+            display: grid;
+            gap: 2rem;
+        }
+        
+        .post {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .post-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .post-title {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .post-meta {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        .post-content {
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .reply-section {
+            border-top: 1px solid #eee;
+            padding-top: 1.5rem;
+        }
+        
+        .reply-form {
+            margin-bottom: 1.5rem;
+        }
+        
+        .reply-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            margin-bottom: 10px;
+            resize: vertical;
+            min-height: 80px;
+        }
+        
+        .reply-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        
+        .reply-btn:hover {
+            background-color: #2980b9;
+        }
+        
+        .replies {
+            margin-top: 1.5rem;
+        }
+        
+        .reply {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+        }
+        
+        .reply:last-child {
+            margin-bottom: 0;
+        }
+        
+        .reply-meta {
+            color: #7f8c8d;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .reply-content {
+            line-height: 1.6;
+        }
+        
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .post-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="https://magearenagame.com/" class="logo">Mage<span>Arena</span></a>
+                <button class="create-post-btn" id="createPostBtn">Create New Post</button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="post-form-container" id="postFormContainer">
+                <form class="post-form" id="postForm">
+                    <h2>Create New Post</h2>
+                    <div class="form-group">
+                        <label for="postTitle">Title</label>
+                        <input type="text" id="postTitle" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="postContent">Content</label>
+                        <textarea id="postContent" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Publish Post</button>
+                    <button type="button" class="submit-btn cancel-btn" id="cancelPostBtn">Cancel</button>
+                </form>
+            </div>
+            
+            <div class="posts-container" id="postsContainer">
+                <!-- Posts will be dynamically generated here -->
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Mage Arena Game.Everyone is free to post.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize post data
+        let posts = JSON.parse(localStorage.getItem('rumbleRushPosts')) || [];
+        
+        // DOM elements
+        const createPostBtn = document.getElementById('createPostBtn');
+        const postFormContainer = document.getElementById('postFormContainer');
+        const postForm = document.getElementById('postForm');
+        const cancelPostBtn = document.getElementById('cancelPostBtn');
+        const postsContainer = document.getElementById('postsContainer');
+        
+        // Show/hide post form
+        createPostBtn.addEventListener('click', () => {
+            postFormContainer.classList.add('active');
+        });
+        
+        cancelPostBtn.addEventListener('click', () => {
+            postFormContainer.classList.remove('active');
+            postForm.reset();
+        });
+        
+        // Submit new post
+        postForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const title = document.getElementById('postTitle').value;
+            const content = document.getElementById('postContent').value;
+            
+            if (title.trim() && content.trim()) {
+                const newPost = {
+                    id: Date.now(),
+                    title: title,
+                    content: content,
+                    timestamp: new Date().toISOString(),
+                    replies: []
+                };
+                
+                posts.unshift(newPost); // Add to beginning of array
+                savePosts();
+                renderPosts();
+                
+                postForm.reset();
+                postFormContainer.classList.remove('active');
+            }
+        });
+        
+        // Save posts to local storage
+        function savePosts() {
+            localStorage.setItem('rumbleRushPosts', JSON.stringify(posts));
+        }
+        
+        // Render posts list
+        function renderPosts() {
+            postsContainer.innerHTML = '';
+            
+            if (posts.length === 0) {
+                postsContainer.innerHTML = '<div class="post"><p>No posts yet. Create the first one!</p></div>';
+                return;
+            }
+            
+            posts.forEach(post => {
+                const postElement = document.createElement('div');
+                postElement.className = 'post';
+                postElement.innerHTML = `
+                    <div class="post-header">
+                        <div>
+                            <h2 class="post-title">${escapeHtml(post.title)}</h2>
+                            <div class="post-meta">Posted on ${formatDate(post.timestamp)}</div>
+                        </div>
+                    </div>
+                    <div class="post-content">${formatContent(post.content)}</div>
+                    <div class="reply-section">
+                        <form class="reply-form" data-post-id="${post.id}">
+                            <textarea class="reply-input" placeholder="Write your reply..." required></textarea>
+                            <button type="submit" class="reply-btn">Post Reply</button>
+                        </form>
+                        <div class="replies" id="replies-${post.id}">
+                            ${renderReplies(post.replies)}
+                        </div>
+                    </div>
+                `;
+                
+                postsContainer.appendChild(postElement);
+            });
+            
+            // Add reply event listeners
+            document.querySelectorAll('.reply-form').forEach(form => {
+                form.addEventListener('submit', handleReplySubmit);
+            });
+        }
+        
+        // Render replies
+        function renderReplies(replies) {
+            if (replies.length === 0) {
+                return '<p class="no-replies">No replies yet</p>';
+            }
+            
+            return replies.map(reply => `
+                <div class="reply">
+                    <div class="reply-meta">Replied on ${formatDate(reply.timestamp)}</div>
+                    <div class="reply-content">${escapeHtml(reply.content)}</div>
+                </div>
+            `).join('');
+        }
+        
+        // Handle reply submission
+        function handleReplySubmit(e) {
+            e.preventDefault();
+            
+            const postId = parseInt(e.target.dataset.postId);
+            const replyInput = e.target.querySelector('.reply-input');
+            const content = replyInput.value;
+            
+            if (content.trim()) {
+                const post = posts.find(p => p.id === postId);
+                if (post) {
+                    const newReply = {
+                        content: content,
+                        timestamp: new Date().toISOString()
+                    };
+                    
+                    post.replies.push(newReply);
+                    savePosts();
+                    renderPosts();
+                }
+            }
+        }
+        
+        // Utility function: Escape HTML
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+        
+        // Utility function: Format date
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleString('zh-CN');
+        }
+        
+        // Utility function: Format content (preserve line breaks)
+        function formatContent(content) {
+            return content.replace(/\n/g, '<br>');
+        }
+        
+        // Initial render
+        renderPosts();
+    </script>
+</body>
+</html>
