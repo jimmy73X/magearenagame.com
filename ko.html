@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9341704667724928"
+     crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-9341704667724928">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X549WE5Q7S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-X549WE5Q7S');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mage Arena - 음성으로 조종하는 PvP 다크 판타지 마법사 배틀 게임. 이 멀티플레이어 Steam 게임에서 목소리로 마법을 사용하세요.">
+    <meta name="keywords" content="Mage Arena, 메이지 아레나 게임, Steam 게임, PvP 액션, 음성 조종 마법, 다크 판타지, 마법사 아레나, 얼리 액세스 게임, 멀티플레이어 전투, 메이지 아레나 제작, 새로운 마법사 게임, 메이지 아레나 스팀, 메이지 아레나 마법, 메이지 아레나 파이어볼, 메이지 아레나 위키, 마법사 마법 게임">
+    <link rel="canonical" href="https://magearenagame.com">
+    
+    <title>Mage Arena - Steam에서 음성으로 조종하는 마법사 배틀 게임</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'apple-blue': '#0071e3',
+                        'apple-gray': '#f5f5f7',
+                        'apple-dark': '#1d1d1f',
+                        'wizard-purple': '#6a0dad',
+                        'spell-red': '#ff3b30',
+                        'mana-blue': '#0a84ff',
+                        'dark-fantasy': '#2c1a1d',
+                    },
+                    fontFamily: {
+                        'heading': ['MedievalSharp', 'cursive'],
+                        'body': ['Montserrat', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background: linear-gradient(135deg, #1d1d1f 0%, #2c1a1d 100%);
+            color: #f5f5f7;
+            min-height: 100vh;
+        }
+        
+        .spell-card {
+            background: rgba(30, 30, 32, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .spell-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(106, 13, 173, 0.3);
+        }
+        
+        .glowing-btn {
+            background: linear-gradient(45deg, #6a0dad, #0a84ff);
+            box-shadow: 0 4px 20px rgba(106, 13, 173, 0.6);
+            transition: all 0.3s ease;
+        }
+        
+        .glowing-btn:hover {
+            box-shadow: 0 6px 25px rgba(106, 13, 173, 0.8), 0 0 15px rgba(10, 132, 255, 0.6);
+            transform: translateY(-2px);
+        }
+        
+        .feature-icon {
+            background: linear-gradient(135deg, #6a0dad 0%, #0a84ff 100%);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #6a0dad, #0a84ff, transparent);
+            margin: 60px 0;
+        }
+        
+        .system-card {
+            background: rgba(25, 25, 28, 0.7);
+            border-left: 4px solid #0a84ff;
+        }
+        
+        .faq-card {
+            background: rgba(30, 30, 35, 0.7);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-card:hover {
+            background: rgba(40, 40, 45, 0.8);
+        }
+        
+        .logo-text {
+            font-family: 'MedievalSharp', cursive;
+            text-shadow: 0 0 10px rgba(106, 13, 173, 0.7), 0 0 20px rgba(10, 132, 255, 0.5);
+        }
+        
+        .game-image {
+            border-radius: 16px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+            transition: all 0.4s ease;
+        }
+        
+        .game-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 40px rgba(106, 13, 173, 0.4);
+        }
+    </style>
+</head>
+<body class="font-body">
+    <!-- Header -->
+    <header class="py-6 px-4 sm:px-8">
+        <div class="container mx-auto flex flex-col sm:flex-row justify-between items-center">
+            <div class="flex items-center mb-4 sm:mb-0">
+                <i class="fas fa-hat-wizard text-3xl text-purple-500 mr-3"></i>
+                <h1 class="logo-text text-3xl font-bold text-white">MAGE ARENA</h1>
+            </div>
+            <div>
+                <a href="https://store.steampowered.com/app/3716600/Mage_Arena/" 
+                   target="_blank"
+                   class="glowing-btn px-6 py-3 rounded-full font-semibold text-white">
+                   <i class="fab fa-steam mr-2"></i>스팀에서 플레이
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-16 px-4 sm:px-8">
+        <div class="container mx-auto max-w-6xl text-center">
+            <div class="mb-10">
+                <span class="bg-purple-900 text-purple-300 px-4 py-1 rounded-full text-sm font-medium">얼리 액세스 중</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-heading font-bold mb-6">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">음성으로 조종하는</span><br>
+                마법사 배틀 아레나
+            </h1>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-10">
+                마법사와 흑마법사 사이의 오랜 불화를 해결하기 위해 음성으로 마법을 사용하는 협동 PvP 경험.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-16">
+                <a href="https://store.steampowered.com/app/3716600/Mage_Arena/" 
+                   target="_blank"
+                   class="glowing-btn px-8 py-4 rounded-full font-bold text-white text-lg">
+                   스팀에서 구매 - $2.99
+                </a>
+                <a href="#gameplay" class="px-8 py-4 rounded-full font-bold bg-white bg-opacity-10 text-white text-lg hover:bg-opacity-20 transition">
+                    더 알아보기
+                </a>
+            </div>
+            
+            <div class="relative w-full max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl game-image">
+                <img src="https://onlinegamedayday.com/m5.png" alt="음성으로 조종하는 마법사 배틀 아레나" class="w-full h-auto">
+            </div>
+        </div>
+    </section>
+
+    <!-- Price Section -->
+    <section class="py-16 px-4 sm:px-8 bg-gradient-to-b from-gray-900 to-dark-fantasy">
+        <div class="container mx-auto max-w-4xl">
+            <div class="flex flex-col md:flex-row items-center gap-8 mb-10">
+                <div class="md:w-1/2">
+                    <img src="https://onlinegamedayday.com/m1.png" alt="메이지 아레나 가격" class="w-full h-auto rounded-xl shadow-xl game-image">
+                </div>
+                <div class="md:w-1/2">
+                    <div class="spell-card p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="feature-icon">
+                                <i class="fas fa-tag text-white text-2xl"></i>
+                            </div>
+                            <h2 class="text-3xl font-bold font-heading ml-4">메이지 아레나 가격</h2>
+                        </div>
+                        
+                        <div class="space-y-4 text-gray-300">
+                            <p class="text-lg">
+                                메이지 아레나는 <span class="font-bold text-red-400">무료 게임이 아닙니다</span> 현재 Steam에서 <span class="font-bold text-green-400">$2.99</span>에 판매 중이며, 이는 버그 수정과 게임의 <span class="font-bold text-yellow-400">얼리 액세스</span> 상태 때문입니다.
+                            </p>
+                            
+                            <p class="text-lg">
+                                이는 게임 개발자 <span class="font-bold">jrsjams</span>가 게임의 공식 <span class="font-bold text-blue-400">Steam</span> 페이지에서 언급한 바 있습니다.
+                            </p>
+                            
+                            <p class="text-lg font-medium bg-gray-800 p-4 rounded-lg border-l-4 border-yellow-500">
+                                2025년 8월 기준 가격은 여전히 $2.99이며, 게임이 최종 출시되고 개발자가 더 많은 기능을 추가할 때까지 동일하게 유지될 수 있습니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section class="py-16 px-4 sm:px-8">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl font-bold font-heading text-center mb-16">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">메이지 아레나</span> 액션
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/bZQGhvfLvvU" 
+                            title="재미있는 마법사 게임" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                </div>
+                
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/roVGgzyBdc4" 
+                            title="메이지 아레나는 놀라운 게임입니다" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                </div>
+                
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/8PDgUbvhAHo" 
+                            title="메이지 아레나 제작 가이드" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                </div>
+                
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/96oYVoqD6-4" 
+                            title="메이지 아레나 마법 가이드" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gameplay Section -->
+    <section id="gameplay" class="py-16 px-4 sm:px-8 bg-gradient-to-b from-dark-fantasy to-gray-900">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl font-bold font-heading text-center mb-4">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">메이지 아레나</span> 플레이 방법
+            </h2>
+            <p class="text-center text-gray-400 mb-16 max-w-2xl mx-auto">음성으로 마법의 기술을 익히고 아레나를 지배하세요</p>
+            
+            <!-- Gameplay Images -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                <div class="game-image overflow-hidden">
+                    <img src="https://onlinegamedayday.com/m2.png" alt="메이지 아레나 플레이 방법" class="w-full h-auto">
+                </div>
+                <div class="game-image overflow-hidden">
+                    <img src="https://onlinegamedayday.com/magearena-m3.png" alt="메이지 아레나 게임플레이" class="w-full h-auto">
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Core Mechanics -->
+                <div class="spell-card p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="feature-icon">
+                            <i class="fas fa-microphone-alt text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold ml-4">핵심 메커니즘 & 컨트롤</h3>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-xl font-semibold text-purple-400 mb-2">음성 활성화 마법 시전</h4>
+                            <p class="text-gray-300">
+                                영어 명령어를 마이크에 소리쳐 마법을 시전하세요 (예: "Fireball", "Freeze", "Wormhole"). 정확도가 중요합니다: 잘못된 발음이나 배경 소음은 마법이 빗나가거나 자신에게 피해를 입힐 수 있습니다.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-xl font-semibold text-blue-400 mb-2">마법 재사용 대기시간 초기화</h4>
+                            <p class="text-gray-300">
+                                마법서를 떨어뜨리고(G 키를 누르고 있음) 즉시 주워서 재사용 대기시간을 우회하세요 - 긴급 상황에서 유용한 기술입니다.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-xl font-semibold text-green-400 mb-2">이동 & 상호작용</h4>
+                            <ul class="list-disc list-inside text-gray-300 space-y-2">
+                                <li>표준 WASD 키를 사용하여 이동하세요</li>
+                                <li>팀원 위치, 생물 군계 및 목표를 보여주는 지도를 열려면 Q를 사용하세요</li>
+                                <li>D로 적을 대상으로 지정하세요; 대상 지정을 취소하려면 D를 길게 누르세요</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Game Modes -->
+                <div class="spell-card p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="feature-icon">
+                            <i class="fas fa-flag text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold ml-4">게임 모드 & 목표</h3>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-xl font-semibold text-red-400 mb-2">깃발 뺏기 (4대4)</h4>
+                            <ul class="list-disc list-inside text-gray-300 space-y-2">
+                                <li>먼저 아군 기지 깃발을 확보하세요: 깃발을 확보하지 않고 돌진하는 것은 흔한 실수입니다</li>
+                                <li>재생성 규칙: 제거된 플레이어는 깃발이 적에게 빼앗길 때까지 재생성됩니다</li>
+                                <li>생물 군계 탐험: 지도는 무작위 육각형 생물 군계로 구성됩니다. 깃발이나 전리품이 풍부한 지역(용암 요새, 묘지 납골당 등)을 찾으려면 지도(Q)를 확인하세요</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-xl font-semibold text-yellow-400 mb-2">1대1 결투</h4>
+                            <p class="text-gray-300">
+                                음성 정확도와 타이밍이 승패를 결정하는 빠른 속도의 전투. 잘못 들린 마법은 종종 혼란스러운 결과를 초래합니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Exploration -->
+                <div class="spell-card p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="feature-icon">
+                            <i class="fas fa-map-marked-alt text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold ml-4">탐험 & 제작</h3>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-xl font-semibold text-green-400 mb-2">생물 군계별 도전 과제 & 전리품</h4>
+                            <ul class="list-disc list-inside text-gray-300 space-y-2">
+                                <li>전리품 유형: 상자에는 마법, 무기(검 등) 또는 "Weed of the Pipe"(연기 고리 생성)와 같은 희귀 아이템이 포함됩니다</li>
+                                <li>고유 마법: 6개의 마법(예: 치유 "Divine Light", 높은 피해 "Thunderbolt")은 상자에서만 찾을 수 있거나 놈과 거래하여 얻을 수 있습니다</li>
+                                <li>환경 위험: 버섯 구덩이는 섬에 도달하기 위해 버섯 위에서 튀어야 합니다. 개구리 늪은 진흙으로 이동 속도를 늦춥니다; 거대 개구리는 플레이어를 먹을 수 있습니다</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-xl font-semibold text-blue-400 mb-2">제작 시스템</h4>
+                            <ul class="list-disc list-inside text-gray-300 space-y-2">
+                                <li>생물 군계에서 자원 수집(버섯, 수정)</li>
+                                <li>"제작 그루터기"에서 도구 제작(축소 광선, 개구리 창 등)</li>
+                                <li>고블린 배송: 녹색 고블린이 정기적으로 아군 기지에 재료를 떨어뜨립니다. 전리품을 훔치려면 그들을 죽이세요 - 그들은 재생성됩니다!</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Combat Tips -->
+                <div class="spell-card p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="feature-icon">
+                            <i class="fas fa-fist-raised text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold ml-4">전투 팁 & 고급 전술</h3>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-xl font-semibold text-red-400 mb-2">원소 상호작용</h4>
+                            <ul class="list-disc list-inside text-gray-300 space-y-2">
+                                <li>발에 "Freeze" 마법을 시전하여 불(용암 또는 파이어볼에서)을 끄세요</li>
+                                <li>탐험 중 빠른 치유를 위해 "Divine Light" 마법(납골당 항아리에서 찾을 수 있음)을 사용하세요</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-xl font-semibold text-purple-400 mb-2">팀플레이 전략</h4>
+                            <ul class="list-disc list-inside text-gray-300 space-y-2">
+                                <li>아군 피해: 활성화됨 - 아군을 치지 마세요!</li>
+                                <li>야간 메커니즘: 어둠이 시야를 제한합니다; 횃불은 적에게 당신의 위치를 드러냅니다</li>
+                                <li>체력 바: 팀원 체력은 이름 아래에 표시됩니다; 빨간 이름은 적을 나타냅니다</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-xl font-semibold text-yellow-400 mb-2">놈 거래</h4>
+                            <p class="text-gray-300">
+                                마법서를 놈과 거래하면 무작위 아이템(일반적으로 재료)을 얻지만, 재생성할 때까지 모든 마법을 잃습니다 - 권장하지 않습니다!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spells Section -->
+    <section class="py-16 px-4 sm:px-8">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl font-bold font-heading text-center mb-4">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">마법</span> 획득 방법
+            </h2>
+            <p class="text-center text-gray-400 mb-16 max-w-2xl mx-auto">아레나를 지배할 강력한 마법을 획득하세요</p>
+            
+            <div class="flex justify-center mb-16">
+                <img src="https://onlinegamedayday.com/m4.png" alt="마법 획득 방법" class="w-full max-w-4xl rounded-xl shadow-2xl game-image">
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Starter Spells -->
+                <div class="spell-card p-6">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-book text-4xl text-yellow-500 mb-3"></i>
+                        <h3 class="text-xl font-bold">시작 마법</h3>
+                    </div>
+                    <p class="text-gray-300 text-center">
+                        시작하면 파이어볼, 프리즈, 웜홀과 같은 기본 마법이 포함된 마법서를 받습니다.
+                    </p>
+                    <div class="mt-4 bg-gray-800 rounded-lg p-3">
+                        <p class="text-sm text-gray-400">
+                            <i class="fas fa-lightbulb text-yellow-500 mr-2"></i>마법서를 떨어뜨리고(G 키를 누르고 있음) 주워서 재사용 대기시간을 초기화하세요
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Exploration -->
+                <div class="spell-card p-6">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-chess-rook text-4xl text-red-500 mb-3"></i>
+                        <h3 class="text-xl font-bold">탐험 & 전리품</h3>
+                    </div>
+                    <p class="text-gray-300 text-center">
+                        생물 군계(용암 요새, 묘지 납골당)에서 찢어진 마법 페이지가 포함된 상자를 찾으세요.
+                    </p>
+                    <div class="mt-4 bg-gray-800 rounded-lg p-3">
+                        <p class="text-sm text-gray-400">
+                            <i class="fas fa-fire text-red-500 mr-2"></i>디바인 라이트와 썬더볼트와 같은 독점 마법 잠금 해제
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Trading -->
+                <div class="spell-card p-6">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-exchange-alt text-4xl text-green-500 mb-3"></i>
+                        <h3 class="text-xl font-bold">놈과의 거래</h3>
+                    </div>
+                    <p class="text-gray-300 text-center">
+                        마법서를 무작위 아이템(일반적으로 재료, 드물게 마법)과 교환하세요.
+                    </p>
+                    <div class="mt-4 bg-red-900 bg-opacity-30 rounded-lg p-3 border border-red-700">
+                        <p class="text-sm text-red-300">
+                            <i class="fas fa-exclamation-triangle mr-2"></i>재생성할 때까지 모든 마법을 잃습니다!
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Crafting -->
+                <div class="spell-card p-6">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-tools text-4xl text-blue-500 mb-3"></i>
+                        <h3 class="text-xl font-bold">제작 & 특별 아이템</h3>
+                    </div>
+                    <p class="text-gray-300 text-center">
+                        고블린 배송 또는 생물 군계의 재료를 사용하여 제작 그루터기에서 도구를 만드세요.
+                    </p>
+                    <div class="mt-4 bg-gray-800 rounded-lg p-3">
+                        <p class="text-sm text-gray-400">
+                            <i class="fas fa-magic text-blue-500 mr-2"></i>위드 오브 더 파이프와 같은 마법은 전리품으로만 획득 가능
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Spell Methods Table -->
+            <div class="spell-card mt-12 p-6 overflow-x-auto">
+                <h3 class="text-2xl font-bold mb-6 text-center">마법 획득 방법</h3>
+                <table class="w-full text-gray-300">
+                    <thead>
+                        <tr class="border-b border-gray-700">
+                            <th class="py-3 px-4 text-left">방법</th>
+                            <th class="py-3 px-4 text-left">마법 예시</th>
+                            <th class="py-3 px-4 text-left">위험/난이도</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800">
+                            <td class="py-3 px-4">시작 마법서</td>
+                            <td class="py-3 px-4">파이어볼, 프리즈</td>
+                            <td class="py-3 px-4"><span class="px-2 py-1 bg-green-800 rounded-full text-xs">낮음</span></td>
+                        </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800">
+                            <td class="py-3 px-4">생물 군계 탐험</td>
+                            <td class="py-3 px-4">디바인 라이트, 썬더볼트</td>
+                            <td class="py-3 px-4"><span class="px-2 py-1 bg-yellow-800 rounded-full text-xs">중간</span></td>
+                        </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800">
+                            <td class="py-3 px-4">놈 거래</td>
+                            <td class="py-3 px-4">무작위 마법</td>
+                            <td class="py-3 px-4"><span class="px-2 py-1 bg-red-800 rounded-full text-xs">높음</span></td>
+                        </tr>
+                        <tr class="hover:bg-gray-800">
+                            <td class="py-3 px-4">전리품 상자</td>
+                            <td class="py-3 px-4">위드 오브 더 파이프</td>
+                            <td class="py-3 px-4"><span class="px-2 py-1 bg-yellow-800 rounded-full text-xs">중간</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- System Requirements -->
+    <section class="py-16 px-4 sm:px-8 bg-gradient-to-b from-gray-900 to-dark-fantasy">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-4xl font-bold font-heading text-center mb-4">
+                시스템 <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">요구 사항</span>
+            </h2>
+            <p class="text-center text-gray-400 mb-16 max-w-2xl mx-auto">시스템이 마법 전투에 준비되었는지 확인하세요</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Minimum -->
+                <div class="system-card p-8">
+                    <h3 class="text-2xl font-bold text-red-400 mb-6">최소 요구 사항</h3>
+                    <ul class="space-y-4 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-desktop text-gray-500 mt-1 mr-3"></i>
+                            <span><strong>운영체제:</strong> Windows 10 64-bit</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-microchip text-gray-500 mt-1 mr-3"></i>
+                            <span><strong>프로세서:</strong> Intel Core i5-2400 / AMD FX-6300</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-memory text-gray-500 mt-1 mr-3"></i>
+                            <span><strong>메모리:</strong> 8 GB RAM</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-video text-gray-500 mt-1 mr-3"></i>
+                            <span><strong>그래픽:</strong> NVIDIA GTX 960 / AMD R9 280</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-plug text-gray-500 mt-1 mr-3"></i>
+                            <span><strong>DirectX:</strong> 버전 11</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-network-wired text-gray-500 mt-1 mr-3"></i>
+                            <span><strong>네트워크:</strong> 광대역 인터넷 연결</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-hdd text-gray-500 mt-1 mr-3"></i>
+                            <span><strong>저장공간:</strong> 4 GB 사용 가능 공간</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-microphone text-red-500 mt-1 mr-3"></i>
+                            <span><strong>추가:</strong> 마이크 필요!</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Recommended -->
+                <div class="system-card p-8 border-l-blue-500">
+                    <h3 class="text-2xl font-bold text-blue-400 mb-6">권장 요구 사항</h3>
+                    <ul class="space-y-4 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-desktop text-gray-500 mt-1 mr-3"></i>
+                            <span><strong>운영체제:</strong> Windows 11 64-bit</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-microchip text-gray-500 mt-1 mr-3"></i>
+                            <span><strong>프로세서:</strong> Intel Core i5-8400 / AMD Ryzen 5 2600</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-memory text-gray-500 mt-1 mr-3"></i>
+                            <span><strong>메모리:</strong> 16 GB RAM</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-video text-gray-500 mt-1 mr-3"></i>
+                            <span><strong>그래픽:</strong> NVIDIA GTX 1060 / AMD RX 580</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-plug text-gray-500 mt-1 mr-3"></i>
+                            <span><strong>DirectX:</strong> 버전 12</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-network-wired text-gray-500 mt-1 mr-3"></i>
+                            <span><strong>네트워크:</strong> 광대역 인터넷 연결</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-hdd text-gray-500 mt-1 mr-3"></i>
+                            <span><strong>저장공간:</strong> 4 GB 사용 가능 공간</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-microphone-alt text-blue-500 mt-1 mr-3"></i>
+                            <span><strong>추가:</strong> 고품질 마이크</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 px-4 sm:px-8">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-4xl font-bold font-heading text-center mb-4">
+                자주 <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">묻는 질문</span>
+            </h2>
+            <p class="text-center text-gray-400 mb-16 max-w-2xl mx-auto">메이지 아레나에 대해 알아야 할 모든 것</p>
+            
+            <div class="space-y-6">
+                <!-- FAQ 1 -->
+                <div class="faq-card p-6">
+                    <h3 class="text-xl font-bold mb-3 flex items-center">
+                        <i class="fas fa-question-circle text-purple-500 mr-3"></i>
+                        메이지 아레나 스팀이 $2.99의 가치가 있나요?
+                    </h3>
+                    <p class="text-gray-300">
+                        Absolutely! 메이지 아레나 스팀은 몇 시간 동안의 즐거움을 제공합니다. 플레이어들은 메이지 아레나 스팀이 친구들과 잊지 못할 순간을 창출하는 독특한 음성 제어 게임 플레이를 가져오는 방식을 좋아합니다.
+                    </p>
+                </div>
+                
+                <!-- FAQ 2 -->
+                <div class="faq-card p-6">
+                    <h3 class="text-xl font-bold mb-3 flex items-center">
+                        <i class="fas fa-question-circle text-blue-500 mr-3"></i>
+                        스팀 덱에서 작동하나요?
+                    </h3>
+                    <p class="text-gray-300">
+                        예, 하지만 제한이 있습니다. Proton GE-10-8이 필요하며 컨트롤러 지원이 아직 구현되지 않았기 때문에 마법 시전을 위해 터치스크린을 사용해야 합니다.
+                    </p>
+                </div>
+                
+                <!-- FAQ 3 -->
+                <div class="faq-card p-6">
+                    <h3 class="text-xl font-bold mb-3 flex items-center">
+                        <i class="fas fa-question-circle text-yellow-500 mr-3"></i>
+                        왜 이렇게 저렴한가요?
+                    </h3>
+                    <p class="text-gray-300">
+                        개발자는 진행 중인 버그 수정으로 인해 얼리 액세스 기간 동안 가격을 인하했습니다. 안정화되면 정규 가격인 $4.99로 돌아갈 것입니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortress of the Wizard - 임베디드 게임</title>
+    <style>
+        .fortress-wizard-embed {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            font-family: Arial, sans-serif;
+            color: #333;
+            line-height: 1.4;
+        }
+        
+        .fortress-wizard-embed .game-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 75%; /* 4:3 aspect ratio */
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            background: #000;
+        }
+        
+        .fortress-wizard-embed iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .fortress-wizard-embed .controls {
+            margin-top: 15px;
+            text-align: center;
+        }
+        
+        .fortress-wizard-embed .fullscreen-btn {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #4a4ae6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        
+        .fortress-wizard-embed .fullscreen-btn:hover {
+            background: #3a3ad6;
+        }
+        
+        .fortress-wizard-embed .game-info {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f5f5f5;
+            border-radius: 8px;
+        }
+        
+        .fortress-wizard-embed h2 {
+            font-size: 18px;
+            margin: 0 0 12px 0;
+            color: #4a4ae6;
+        }
+        
+        .fortress-wizard-embed h3 {
+            font-size: 16px;
+            margin: 18px 0 10px 0;
+            color: #4a4ae6;
+        }
+        
+        .fortress-wizard-embed p {
+            margin: 0 0 12px 0;
+            font-size: 14px;
+        }
+        
+        .fortress-wizard-embed ul {
+            padding-left: 20px;
+            margin: 0 0 15px 0;
+        }
+        
+        .fortress-wizard-embed li {
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+        
+        .fortress-wizard-embed .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .fortress-wizard-embed .feature {
+            background: #e9e9ff;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+        
+        .fortress-wizard-embed .controls-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .fortress-wizard-embed .control {
+            background: #f0f0f0;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+        
+        .fortress-wizard-embed .update-info {
+            background: #e9e9ff;
+            padding: 10px 15px;
+            border-radius: 4px;
+            margin-top: 15px;
+            text-align: center;
+            font-size: 13px;
+        }
+        
+        @media (max-width: 600px) {
+            .fortress-wizard-embed .features-grid,
+            .fortress-wizard-embed .controls-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="fortress-wizard-embed">
+        <div class="game-container">
+            <iframe src="https://games.crazygames.com/en_US/fortress-of-the-wizard-mfx/index.html" allow="fullscreen" allowfullscreen></iframe>
+        </div>
+        
+        <div class="controls">
+            <button class="fullscreen-btn" onclick="openFullscreen()">전체 화면으로 플레이</button>
+        </div>
+        
+        <div class="game-info">
+            <h2>Fortress of the Wizard 정보</h2>
+            <p>Fortress of the Wizard는 끊임없는 악마 군단으로부터 성채를 지키는 강력한 마법사가 되는 마법 방어 어드벤처입니다. 파이어볼, 얼음 파도, 회오리 토네이도, 유성 및 더 많은 것을 포함하는 파괴적인 마법 무기고를 활용하여 침략을 분쇄하세요.</p>
+            
+            <h3>게임 특징</h3>
+            <div class="features-grid">
+                <div class="feature">8가지 고유 마법</div>
+                <div class="feature">8가지 다른 적</div>
+                <div class="feature">20가지 업그레이드 유형</div>
+                <div class="feature">다중 위치</div>
+            </div>
+            
+            <h3>게임 컨트롤</h3>
+            <div class="controls-grid">
+                <div class="control"><strong>왼쪽 마우스 버튼</strong> - 선택된 마법 사용</div>
+                <div class="control"><strong>QE / 1-8 키 / 마우스 휠</strong> - 마법 선택</div>
+                <div class="control"><strong>오른쪽 마우스 버튼 / W 키</strong> - 파이어볼 마법 선택</div>
+            </div>
+            
+            <div class="update-info">
+                <strong>마지막 업데이트:</strong> 오늘
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openFullscreen() {
+            const iframe = document.querySelector('.fortress-wizard-embed iframe');
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.webkitRequestFullscreen) {
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) {
+                iframe.msRequestFullscreen();
+            }
+        }
+    </script>
+    <!-- CTA Section -->
+    <section class="py-20 px-4 sm:px-8 bg-gradient-to-r from-purple-900 to-blue-900">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="text-4xl md:text-5xl font-bold font-heading mb-6">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-red-500">강력한 마법사</span>가 될 준비가 되셨나요?
+            </h2>
+            <p class="text-xl text-gray-200 max-w-2xl mx-auto mb-10">
+                궁극의 음성 제어 마법사 배틀 아레나에서 수천 명의 플레이어와 함께하세요. 지금 Steam 얼리 액세스에서 이용 가능합니다.
+            </p>
+            <a href="https://store.steampowered.com/app/3716600/Mage_Arena/" 
+               target="_blank"
+               class="inline-block glowing-btn px-8 py-4 rounded-full font-bold text-white text-lg mb-4">
+               메이지 아레나 구매 - $2.99
+            </a>
+            <p class="text-gray-300 text-sm mt-4">
+                <i class="fas fa-exclamation-circle mr-2"></i>얼리 액세스 기간 이후 가격이 인상될 수 있습니다
+            </p>
+        </div>
+    </section>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게임 미리보기 임베드 솔루션</title>
+    <style>
+        /* 스타일 충돌을 피하기 위해 고유한 네임스페이스 추가 */
+        .game-preview-container {
+            --gp-primary: #2c2c54;
+            --gp-secondary: #40407a;
+            --gp-accent: #00cec9;
+            --gp-text: #ffffff;
+            --gp-bg: #1a1a2e;
+            --gp-card-bg: linear-gradient(145deg, var(--gp-primary), var(--gp-secondary));
+            --gp-overlay: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            --gp-button: linear-gradient(45deg, var(--gp-accent), #0984e3);
+            
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: var(--gp-bg);
+            padding: 20px;
+            border-radius: 10px;
+            box-sizing: border-box;
+            max-width: 1400px;
+            margin: 20px auto;
+        }
+        
+        /* 글로벌 스타일 효과 회피 */
+        .game-preview-container * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none;
+            text-decoration: none;
+        }
+        
+        /* 컴포넌트 내부 스타일 */
+        .game-preview-container .gp-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 0 15px;
+        }
+        
+        .game-preview-container .gp-header h2 {
+            font-size: 2.2rem;
+            color: var(--gp-text);
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #00dbde, #fc00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 10px rgba(0, 200, 255, 0.2);
+        }
+        
+        .game-preview-container .gp-header p {
+            color: #b8c1ec;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .game-preview-container .gp-games {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .game-preview-container .gp-game-card {
+            width: calc(25% - 20px); /* 한 줄에 4개 */
+            min-width: 250px;
+            background: var(--gp-card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .game-preview-container .gp-game-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+        
+        .game-preview-container .gp-game-link {
+            display: block;
+        }
+        
+        .game-preview-container .gp-image-container {
+            position: relative;
+            height: 180px;
+            overflow: hidden;
+        }
+        
+        .game-preview-container .gp-game-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .game-preview-container .gp-game-card:hover .gp-game-image {
+            transform: scale(1.05);
+        }
+        
+        .game-preview-container .gp-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gp-overlay);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .game-preview-container .gp-game-card:hover .gp-overlay {
+            opacity: 1;
+        }
+        
+        .game-preview-container .gp-play-btn {
+            background: var(--gp-button);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            font-size: 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(0, 206, 201, 0.3);
+        }
+        
+        .game-preview-container .gp-play-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 18px rgba(0, 206, 201, 0.5);
+        }
+        
+        .game-preview-container .gp-game-info {
+            padding: 15px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .game-preview-container .gp-game-title {
+            font-size: 1.2rem;
+            color: var(--gp-text);
+            margin-bottom: 10px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .game-preview-container .gp-game-title i {
+            color: #ffb142;
+            font-size: 1rem;
+        }
+        
+        .game-preview-container .gp-game-meta {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 12px;
+            margin-top: 10px;
+        }
+        
+        .game-preview-container .gp-game-genre, 
+        .game-preview-container .gp-game-rating {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+        
+        .game-preview-container .gp-game-genre {
+            color: #b8c1ec;
+        }
+        
+        .game-preview-container .gp-game-rating {
+            color: #ffb142;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        /* 반응형 디자인 */
+        @media (max-width: 1200px) {
+            .game-preview-container .gp-game-card {
+                width: calc(33.333% - 20px); /* 한 줄에 3개 */
+            }
+        }
+        
+        @media (max-width: 900px) {
+            .game-preview-container .gp-game-card {
+                width: calc(50% - 20px); /* 한 줄에 2개 */
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .game-preview-container .gp-game-card {
+                width: 100%; /* 한 줄에 1개 */
+                max-width: 350px;
+            }
+            
+            .game-preview-container .gp-header h2 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        .game-preview-container .gp-footer-note {
+            text-align: center;
+            margin-top: 25px;
+            color: #b8c1ec;
+            font-size: 0.9rem;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- 원본 웹사이트 콘텐츠 -->
+        
+        <!-- 게임 미리보기 컴포넌트 - 여기서부터 복사 -->
+        <div class="game-preview-container">
+            <div class="gp-header">
+                <h2>인기 게임 추천</h2>
+                <p>선별된 8개의 인기 게임, 이미지를 클릭하여 새 창에서 게임 시작</p>
+            </div>
+            
+            <div class="gp-games">
+                <!--게임 1 -->
+                <div class="gp-game-card">
+                    <a href="https://screwdom3d.org/" target="_blank" class="gp-game-link">
+                        <div class="gp-image-container">
+                            <img src="https://onlinegamedayday.com/screwdom3d-600.png?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="screwdom3d" class="gp-game-image">
+                            <div class="gp-overlay">
+                                <button class="gp-play-btn">
+                                    <i class="fas fa-play"></i>지금 플레이
+                                </button>
+                            </div>
+                        </div>
+                        <div class="gp-game-info">
+                            <h3 class="gp-game-title"><i class="fas fa-rocket"></i>Screwdom 3d</h3>
+                            <div class="gp-game-meta">
+                                <span class="gp-game-genre">퍼즐 | 캐주얼</span>
+                                <span class="gp-game-rating">
+                                    <i class="fas fa-star"></i>4.8
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- 게임 2 -->
+                <div class="gp-game-card">
+                    <a href="https://climbingblock.com/" target="_blank" class="gp-game-link">
+                        <div class="gp-image-container">
+                            <img src="https://onlinegamedayday.com/climbingblock600.png?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="climbingblock" class="gp-game-image">
+                            <div class="gp-overlay">
+                                <button class="gp-play-btn">
+                                    <i class="fas fa-play"></i>지금 플레이
+                                </button>
+                            </div>
+                        </div>
+                        <div class="gp-game-info">
+                            <h3 class="gp-game-title"><i class="fas fa-hat-wizard"></i>Climbing Block</h3>
+                            <div class="gp-game-meta">
+                                <span class="gp-game-genre">등반 | 점프</span>
+                                <span class="gp-game-rating">
+                                    <i class="fas fa-star"></i>4.7
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- 게임 3 -->
+                <div class="gp-game-card">
+                    <a href="https://screamals.com/" target="_blank" class="gp-game-link">
+                        <div class="gp-image-container">
+                            <img src="https://onlinegamedayday.com/screamals600.png?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="screamals" class="gp-game-image">
+                            <div class="gp-overlay">
+                                <button class="gp-play-btn">
+                                    <i class="fas fa-play"></i>지금 플레이
+                                </button>
+                            </div>
+                        </div>
+                        <div class="gp-game-info">
+                            <h3 class="gp-game-title"><i class="fas fa-car"></i>Screamals</h3>
+                            <div class="gp-game-meta">
+                                <span class="gp-game-genre">캐주얼 | 스포츠</span>
+                                <span class="gp-game-rating">
+                                    <i class="fas fa-star"></i>4.9
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- 게임 4 -->
+                <div class="gp-game-card">
+                    <a href="https://cutinhalf.org/" target="_blank" class="gp-game-link">
+                        <div class="gp-image-container">
+                            <img src="https://onlinegamedayday.com/cutinhalf600.png?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="cutinhalf" class="gp-game-image">
+                            <div class="gp-overlay">
+                                <button class="gp-play-btn">
+                                    <i class="fas fa-play"></i>지금 플레이
+                                </button>
+                            </div>
+                        </div>
+                        <div class="gp-game-info">
+                            <h3 class="gp-game-title"><i class="fas fa-cube"></i>Cut in Half</h3>
+                            <div class="gp-game-meta">
+                                <span class="gp-game-genre">슬라이스 | 퍼즐</span>
+                                <span class="gp-game-rating">
+                                    <i class="fas fa-star"></i>4.6
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- 게임 5 -->
+                <div class="gp-game-card">
+                    <a href="https://onlinerobotroyale.com/" target="_blank" class="gp-game-link">
+                        <div class="gp-image-container">
+                            <img src="https://onlinegamedayday.com/onlinerobotroyale600.png?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="onlinerobotroyale" class="gp-game-image">
+                            <div class="gp-overlay">
+                                <button class="gp-play-btn">
+                                    <i class="fas fa-play"></i>지금 플레이
+                                </button>
+                            </div>
+                        </div>
+                        <div class="gp-game-info">
+                            <h3 class="gp-game-title"><i class="fas fa-user-secret"></i>Online Robot Royale</h3>
+                            <div class="gp-game-meta">
+                                <span class="gp-game-genre">로봇 | 슈팅</span>
+                                <span class="gp-game-rating">
+                                    <i class="fas fa-star"></i>4.8
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- 게임 6 -->
+                <div class="gp-game-card">
+                    <a href="https://craftbrainrot.xyz/" target="_blank" class="gp-game-link">
+                        <div class="gp-image-container">
+                            <img src="https://onlinegamedayday.com/craftbrainrot600.png?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="craftbrainrot" class="gp-game-image">
+                            <div class="gp-overlay">
+                                <button class="gp-play-btn">
+                                    <i class="fas fa-play"></i>지금 플레이
+                                </button>
+                            </div>
+                        </div>
+                        <div class="gp-game-info">
+                            <h3 class="gp-game-title"><i class="fas fa-futbol"></i>Craft Brainrot</h3>
+                            <div class="gp-game-meta">
+                                <span class="gp-game-genre">퍼즐 | 운동</span>
+                                <span class="gp-game-rating">
+                                    <i class="fas fa-star"></i>4.7
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- 게임 7 -->
+                <div class="gp-game-card">
+                    <a href="https://pilesofmahjong.com/" target="_blank" class="gp-game-link">
+                        <div class="gp-image-container">
+                            <img src="https://onlinegamedayday.com/pilesofmahjong600.png?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="piles of mahjong" class="gp-game-image">
+                            <div class="gp-overlay">
+                                <button class="gp-play-btn">
+                                    <i class="fas fa-play"></i>지금 플레이
+                                </button>
+                            </div>
+                        </div>
+                        <div class="gp-game-info">
+                            <h3 class="gp-game-title"><i class="fas fa-candy-cane"></i>Piles of Pahjong</h3>
+                            <div class="gp-game-meta">
+                                <span class="gp-game-genre">퍼즐 | 캐주얼</span>
+                                <span class="gp-game-rating">
+                                    <i class="fas fa-star"></i>4.5
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- 게임 8 -->
+                <div class="gp-game-card">
+                    <a href="https://zomblox.xyz/" target="_blank" class="gp-game-link">
+                        <div class="gp-image-container">
+                            <img src="https://onlinegamedayday.com/zomblox600.png?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="zomblox" class="gp-game-image">
+                            <div class="gp-overlay">
+                                <button class="gp-play-btn">
+                                    <i class="fas fa-play"></i>지금 플레이
+                                </button>
+                            </div>
+                        </div>
+                        <div class="gp-game-info">
+                            <h3 class="gp-game-title"><i class="fas fa-dragon"></i>Zomblox</h3>
+                            <div class="gp-game-meta">
+                                <span class="gp-game-genre">캐주얼 | 슈팅</span>
+                                <span class="gp-game-rating">
+                                    <i class="fas fa-star"></i>4.9
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="gp-footer-note">
+                모든 게임은 새 창에서 열립니다
+            </div>
+        </div>
+        <!-- 게임 미리보기 컴포넌트 - 복사 끝 -->
+        
+        <!-- 웹사이트의 원본 콘텐츠 계속 -->
+        </div>
+    </div>
+
+    <!-- Font Awesome 아이콘 라이브러리 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        // 클릭 효과 추가
+        document.querySelectorAll('.gp-game-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                // 버튼이 클릭될 때 두 번 트리거되는 것 방지
+                if (e.target.classList.contains('gp-play-btn')) return;
+                
+                const button = this.querySelector('.gp-play-btn');
+                if (button) {
+                    button.classList.add('clicked');
+                    setTimeout(() => {
+                        button.classList.remove('clicked');
+                    }, 300);
+                }
+            });
+        });
+    </script>
+    <!-- Footer -->
+    <footer class="py-12 px-4 sm:px-8 border-t border-gray-800">
+        <div class="container mx-auto max-w-6xl">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center">
+                        <i class="fas fa-hat-wizard text-2xl text-purple-500 mr-3"></i>
+                        <h3 class="logo-text text-2xl font-bold text-white">MAGE ARENA</h3>
+                    </div>
+                    <p class="text-gray-500 mt-2">© 2025 메이지 아레나 게임. 모든 권리 보유.</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="https://store.steampowered.com/" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-steam text-2xl"></i>
+                    </a>
+                    <a href="https://www.youtube.com/" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-youtube text-2xl"></i>
+                    </a>
+                    <a href="https://discord.com/" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-discord text-2xl"></i>
+                    </a>
+                    <a href="https://x.com/" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-twitter text-2xl"></i>
+                    </a>
+                         <div>
+                    <ul class="space-y-2">
+                        <li><a href="https://magearenagame.com/Privacy Policy.html" class="text-gray-400 hover:text-white">개인정보 보호정책</a></li>
+                        <li><a href="https://magearenagame.com/Terms of Service.html" class="text-gray-400 hover:text-white">서비스 약관</a></li>
+                        <li><a href="https://magearenagame.com/magearenagame-blog.html" class="text-gray-400 hover:text-white">블로그</a></li>
+                        <li><a href="https://magearenagame.com/cn.html" class="text-gray-400 hover:text-white">中文</a></li>
+                        <li><a href="https://magearenagame.com/es.html" class="text-gray-400 hover:text-white">Español</a></li>
+                        <li><a href="https://magearenagame.com/pt.html" class="text-gray-400 hover:text-white">Português</a></li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
